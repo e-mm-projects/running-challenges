@@ -595,3 +595,46 @@ button:hover {
 #mapa-zoomovana .mapa-obrazek {
     display: block; 
 }
+
+/* --- OPRAVA PRO MOBILNÍ TELEFONY (displej užší než 600px) --- */
+@media (max-width: 600px) {
+    
+    /* 1. Tlačítko Zpět a Jméno uživatele dáme pod sebe, aby se nepřekrývaly */
+    .tlacitko-zpet, #jmeno-zobrazeni {
+        position: static !important; /* Zrušíme fixní pozici, pokud ji mají */
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    /* 2. Statistiky (ty bílé boxy) - dovolíme jim, aby skočily na další řádek */
+    .statistiky {
+        flex-wrap: wrap; /* Klíčová vlastnost: boxy se naskládají pod sebe */
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .stat-box {
+        flex: 1 1 120px; /* Boxy budou pružné, minimálně 120px široké */
+        padding: 10px;
+        font-size: 14px; /* Mírně zmenšíme písmo, aby se text vešel */
+    }
+
+    /* 3. Nadpis - zmenšíme, aby nezabíral půlku displeje */
+    h1 {
+        font-size: 24px;
+        margin: 15px 0;
+    }
+
+    /* 4. Zadávací pole - roztáhneme na celou šířku */
+    .zadavani-bloku {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #nove-km {
+        width: 100%; /* Políčko pro psaní bude přes celou šířku boxu */
+        box-sizing: border-box;
+    }
+}
