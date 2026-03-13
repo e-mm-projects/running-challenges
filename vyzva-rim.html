@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výzva: Řím</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="zpet-btn" class="tlacitko-zpet">Zpět na nástěnku</button>
+
+    <h1>Výzva do Říma!</h1>
+
+    <div class="statistiky">
+        <div class="stat-box">Naběháno:<br><strong id="nabehano-text">0</strong> km</div>
+        <div class="stat-box">Zbývá:<br><strong id="zbyva-text">0</strong> km</div>
+        <div class="stat-box">Hotovo:<br><strong id="procenta-text">0</strong> %</div>
+    </div>
+
+    <div class="progress-bar-obal">
+        <div id="progress-bar-vypln"></div>
+    </div>
+
+    <div class="zadavani-bloku">
+        <p>Zadej dnešní kilometry:</p>
+        <input type="number" id="nove-km" min="0.1" step="0.1" placeholder="Např. 5.5">
+        <div class="tlacitka-skupina">
+            <button id="pridat-km-btn">Přidat kilometry</button>
+            <button id="odebrat-km-btn" class="cervene-tlacitko">Smazat kilometry</button>
+        </div>
+    </div>
+
+    <div class="mapa-kontejner" id="mapa">
+        <img src="images/mapa-bystrice.jpg" alt="Mapa" class="mapa-obrazek">
+
+    <svg id="svg-mapa" viewBox="0 0 987 1165">
+        <path id="trasa-krivka" d="M 880 76 L 750 230 L 485 470 L 360 630 L 335 710 L 395 850 L 380 1100" fill="none" stroke="#ffeb3b" stroke-width="5" stroke-dasharray="10,10" />
+    </svg>
+        
+        <div id="panacek">🏃‍♂️</div>        
+        <div id="body-na-mape"></div>
+    </div>
+
+    <div class="navstivena-mista">
+        <h2>Tvé cestovatelské deníky (Dosažená místa):</h2>
+        <div id="seznam-zajimavosti" class="zajimavosti-mrizka">
+            </div>
+    </div>
+
+    <p id="jmeno-zobrazeni"></p>
+
+     
+    <div id="gratulace-modal" class="modal-skryty">
+        <div class="modal-obsah">
+            <span class="zavrit-btn" id="zavrit-modal">&times;</span>
+            <h2 id="modal-nadpis">Gratulujeme!</h2>
+            <img id="modal-obrazek" src="" alt="Obrázek místa">
+            <p id="modal-text">Tady bude text o místě...</p>
+        </div>
+    </div>
+
+    <script src="vyzva-rim.js"></script>
+</body>
+</html>

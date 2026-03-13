@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výběr výzvy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Vyber si svou výzvu:</h1>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <button id="odhlasit-btn" class="tlacitko-zpet">Odhlásit se a zpět</button>
+    </div>
+
+    <div class="filtry-kontejner">
+        <button class="filtr-btn aktivni" data-filtr="vse">Všechny</button>
+        <button class="filtr-btn" data-filtr="snadna">Snadná</button>
+        <button class="filtr-btn" data-filtr="stredni">Střední</button>
+        <button class="filtr-btn" data-filtr="tezka">Těžká</button>
+        <button class="filtr-btn" data-filtr="extremni">Extrémní</button>
+    </div>
+
+
+    <div class="seznam-vyzev">
+        
+        <div class="vyzva-karta" data-obtiznost="tezka" style="background-image: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80');">
+            <div class="overlay-prechod"></div>
+            
+            <span class="stitek stitek-tezka">Těžká</span>
+            
+            <div class="obsah-karty">
+                <h2>Z Bystřice do Říma</h2>
+                <p><strong>Délka trasy:</strong> 1211 km</p>
+                <button onclick="vybratVyzvu('rim', 1211)" class="btn-vybrat">Spustit výzvu</button>
+            </div>
+        </div>
+
+        <div class="vyzva-karta" data-obtiznost="snadna" style="background-image: url('images/lipno.jpg');">
+            <div class="overlay-prechod"></div>
+            
+            <span class="stitek stitek-snadna">Snadná</span>
+            
+            <div class="obsah-karty">
+                <h2>Okolo Lipna</h2>
+                <p><strong>Délka trasy:</strong> 22 km</p>
+                <button onclick="window.location.href='pripravujese.html'" class="btn-vybrat">Spustit výzvu</button>
+            </div>
+        </div>
+
+        <div class="vyzva-karta" data-obtiznost="extremni" style="background-image: url('images/mount-doom.jpg');">
+            <div class="overlay-prechod"></div>
+            
+            <span class="stitek stitek-extremni">Extrémní 🔥</span>
+            
+            <div class="obsah-karty">
+                <h2>Mount Doom Challenge</h2>
+                <p><strong>Délka trasy:</strong> 2863 km</p>
+                <button onclick="vybratVyzvu('mount-doom', 2863)" class="btn-vybrat">Spustit výzvu</button>
+            </div>
+        </div>
+
+        <div class="vyzva-karta" data-obtiznost="stredni" style="background-image: url('images/brno.jpg');">
+            <div class="overlay-prechod"></div>
+            
+            <span class="stitek stitek-stredni">Střední</span>
+            
+            <div class="obsah-karty">
+                <h2>Z Bystřice do Brna</h2>
+                <p><strong>Délka trasy:</strong> 100 km</p>
+                <button onclick="window.location.href='pripravujese.html'" class="btn-vybrat">Spustit výzvu</button>
+            </div>
+        </div>
+
+    </div>
+
+    <p id="jmeno-zobrazeni" style="text-align: center; margin-top: 20px; color: #555;"></p>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

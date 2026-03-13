@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výzva: Mount Doom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pozadi-doom">
+    <button id="zpet-btn" class="tlacitko-zpet">Zpět na nástěnku</button>
+
+    <h1>Mount Doom Challenge</h1>
+
+    <div class="statistiky">
+        <div class="stat-box">Naběháno:<br><strong id="nabehano-text">0</strong> km</div>
+        <div class="stat-box">Zbývá:<br><strong id="zbyva-text">0</strong> km</div>
+        <div class="stat-box">Hotovo:<br><strong id="procenta-text">0</strong> %</div>
+    </div>
+
+    <div class="progress-bar-obal">
+        <div id="progress-bar-vypln"></div>
+    </div>
+
+    <div class="zadavani-bloku">
+        <p>Zadej dnešní kilometry:</p>
+        <input type="number" id="nove-km" min="0.1" step="0.1" placeholder="Např. 5.5">
+        <div class="tlacitka-skupina">
+            <button id="pridat-km-btn">Přidat kilometry</button>
+            <button id="odebrat-km-btn" class="cervene-tlacitko">Smazat kilometry</button>
+        </div>
+    </div>
+
+
+    <div class="hlavni-obal-mapy">
+        <div class="zoom-okno">
+
+            <div class="mapa-kontejner mapa-doom" id="mapa-zoomovana">
+                <img src="images/middle-earth-empty.jpg" alt="Mapa" class="mapa-obrazek">
+
+                <svg id="svg-mapa" viewBox="0 0 2087 1221">
+                    <path id="trasa-krivka" d="M 360 154 L 380 205 L 450 165 L 515 185 L 550 160 L 620 135 L 680 150 L 720 185 L 860 140 L 1009 135 L 960 304 L 1020 285 L 960 319 L 925 405 L 1028 409 L 1078 460 L 1155 495 L 1180 550 L 1280 615 L 1270 660 L 1325 665 L 1310 720 L 1345 739 L 1320 815 L 1320 900 L 1420 850 L 1540 910 L 1510 940 L 1509 1050 L 1520 1110 L 1628 1100 L 1590 1000 L 1640 980 1690 975 L 1690 1050" fill="none" stroke="#ffeb3b" stroke-width="5" stroke-dasharray="10,10" />
+                </svg>
+        
+                <div id="panacek">
+                    <img src="images/mount-doom-challenge/ikona.png" alt="Hobiti Frodo a Sam na cestě"  class="panacek-ikona-doom">
+                </div>
+                <div id="body-na-mape"></div>
+            </div>
+        </div>
+
+        <div class="zoom-ovladani">
+            <button id="zoom-in-btn">➕ Přiblížit</button>
+            <button id="zoom-out-btn">➖ Oddálit</button>
+        </div>
+    </div>
+
+    <div class="navstivena-mista">
+        <h2>Tvé cestovatelské deníky (Dosažená místa):</h2>
+        <div id="seznam-zajimavosti" class="zajimavosti-mrizka">
+            </div>
+    </div>
+
+    <p id="jmeno-zobrazeni"></p>
+
+     
+    <div id="gratulace-modal" class="modal-skryty">
+        <div class="modal-obsah">
+            <span class="zavrit-btn" id="zavrit-modal">&times;</span>
+            <h2 id="modal-nadpis">Gratulujeme!</h2>
+            <img id="modal-obrazek" src="" alt="Obrázek místa">
+            <p id="modal-text">Tady bude text o místě...</p>
+        </div>
+    </div>
+
+    <script src="vyzva-mount-doom.js"></script>
+</body>
+</html>
+
+<!--SEZNAM BODŮ 
+M 360 154 START
+L 380 205 TRASA
+L 450 165 STARÝ HVOZD
+L 500 195 MOHYLOVÉ VRCHY
+L 550 160 HŮRKA
+L 620 140 BAŽINY
+L 680 150 AMON SUL
+L 720 185 POD VÝCHODNÍ CESTOU
+L 860 140 POSLEDNÍ MOST
+L 999 134 ROKLINKA
+L 960 304 START CARADHRAS
+L 1020 285 CARADHRAS
+L 960 319 END CARADHRAS
+L 925 405 GATE OF MORIA
+L 1028 409 PŘECHOD MORIE
+L 1078 460 PODÉL ŘEKY K LORIENU
+L 1155 495 CARAS GALADON
+L 1180 550 PODÉL ŘEKY
+L 1280 615 PODÉL ŘEKY
+L 1270 660 PODÉL ŘEKY
+L 1270 660 PODÉL ŘEKY
+L 1325 665 PODÉL ŘEKY
+L 1310 720 PODÉL ŘEKY
+L 1345 739 PODÉL ŘEKY
+L 1320 815 PODÉL ŘEKY
+L 1330 900 RAUROVSKÉ VODOPÁDY
+L 1420 850 EMYN MUIL
+L 1540 910 MORANON
+L 1510 940 CESTA DO ITHILIENU
+L 1509 1050 ITHILIEN
+L 1520 1110 OSGILIATH
+L 1628 1100 MINAS MORGUL
+L 1590 1000 BOD
+L 1640 980 BOD
+L 1690 1050 BOD
+L 1690 1050" FINIŠ
+-->
