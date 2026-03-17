@@ -22,6 +22,38 @@ body {
     );
 }
 
+/* --- VYCENTROVANÝ PÁS POZADÍ PRO ŘÍM --- */
+body.pozadi-rim {
+    /* 1. Barva okrajů (bílá nebo třeba jemná písková #fdf5e6) */
+    background-color: #ffffff; 
+    
+    /* 2. Cesta k tvému obrázku (příponu .png nebo .jpg si pohlídej) */
+    background-image: url('images/cesta-do-rima/italy flag.png'); 
+    
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    /* 3. VELIKOST: Mapa má 987px, tak dáme pás 1100px, aby kousek vyčníval */
+    background-size: 1100px 100vh; 
+}
+
+/* --- SVĚTLÉ NADPISY PRO ŘÍM (pokud bude pozadí tmavé) --- */
+body.pozadi-rim h1,
+body.pozadi-rim h2 {
+    color: #ffffff; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* --- MOBILNÍ ÚPRAVA PRO ŘÍM --- */
+@media (max-width: 1100px) {
+    body.pozadi-rim {
+        background-size: cover; /* Na mobilech se obrázek roztáhne na celou šířku */
+        background-attachment: scroll;
+    }
+}
+
+
 /* --- VYCENTROVANÝ PÁS POZADÍ PRO MOUNT DOOM --- */
 body.pozadi-doom {
     /* 1. Barva okrajů (to, co zbyde po stranách) */
@@ -394,7 +426,7 @@ button:hover {
 .zoom-okno {
     width: 100%;
     /* Odstranili jsme fixní výšku a dali poměr stran podle tvé mapy (2087:1221) */
-    aspect-ratio: 2087 / 1221; 
+    aspect-ratio: 2096 / 1234; 
     overflow: auto; /* Posuvník se ukáže AŽ po přiblížení */
     border: 2px solid #ccc;
     border-radius: 12px;
@@ -636,5 +668,27 @@ button:hover {
     #nove-km {
         width: 100%; /* Políčko pro psaní bude přes celou šířku boxu */
         box-sizing: border-box;
+    }
+    
+    /* --- NOVÁ PRAVIDLA PRO VYSKOKOVACÍ OKNO (MODAL) --- */
+    /* Tato pravidla se teď na mobilu přilepí a vyřeší tvůj problém */
+
+    /* 1. Umožníme obsahu okna, aby se mohl scrollovat */
+    .modal-obsah {
+        max-height: 90vh; /* Okno nebude vyšší než 90% výšky okna prohlížeče */
+        overflow-y: auto; /* Pokud je text delší, objeví se svislý posuvník uvnitř okna */
+        position: relative; /* Tohle je klíčové pro správné pozicování křížku */
+        padding-top: 50px; /* Přidáme místo nahoře pro křížek, aby text nezačínal pod ním */
+        width: 95%; /* Roztáhneme okno skoro přes celou šířku na mobilu */
+        margin: 10px auto; /* Vycentrujeme ho s malou mezerou odshora/dola */
+    }
+
+    /* 2. Opravíme pozici křížku, aby byl vždy vidět a šel snadno zmáčknout */
+    .zavrit-btn {
+        position: absolute; /* Vytrhneme ho z textu */
+        top: 15px; /* Vzdálenost od horního okraje okna (teď je to 15px i na mobilu) */
+        right: 15px; /* Vzdálenost od pravého okraje okna */
+        font-size: 35px; /* Zvětšíme ho, aby se na něj na mobilu lépe trefovalo prstem */
+        z-index: 1001; /* Zůstane nad mapou, tečkami i textem v modalu */
     }
 }
