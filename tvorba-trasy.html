@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Generátor trasy</title>
+    <style>
+        body { text-align: center; font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
+        #mapa-kontejner { 
+            position: relative; 
+            display: inline-block; 
+            border: 3px solid #333; 
+            cursor: crosshair; /* Kurzor se změní na zaměřovač */
+            background-color: white;
+        }
+        /* Tady jsou tvé přesné rozměry! */
+        #mapa-img { width: 1191px; height: 1232px; display: block; }
+        
+        #svg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        #vysledek { width: 80%; max-width: 800px; height: 100px; margin-top: 20px; font-family: monospace; font-size: 16px; padding: 10px;}
+        .ovladani { margin: 20px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <h1>Tvorba trasy do Bradavic ⚡</h1>
+    <p>Klikáním do mapy vytvoříš trasu (Londýn -> Cambridge -> York atd.). Dole se ti vygeneruje kód.</p>
+    
+    <div class="ovladani">
+        <button onclick="krokZpet()">↩ Krok zpět</button>
+        <button onclick="vymazatVse()">🗑 Vymazat vše</button>
+    </div>
+
+    <textarea id="vysledek" readonly placeholder="Tady se objeví tvůj kód (M... L...). Ten pak zkopíruješ do data-vyzev.js!"></textarea>
+
+    <br>
+
+    <div id="mapa-kontejner">
+        <img id="mapa-img" src="images/cesta-do-bradavic/mapa-bradavice.jpg" alt="Mapa">
+        <svg id="svg-overlay" viewBox="0 0 1191 1232">
+            <path id="trasa" d="" fill="none" stroke="red" stroke-width="5" />
+        </svg>
+    </div>
+
+    <script>
+        const kontejner = document.getElementById('mapa-kontejner');
+        const pathEl = document.getElementById('trasa');
+        const vysledekEl = document.getElementById('vysledek');
+        let body = [];
+
+        // Co se stane, když klikneš na mapu
+        kontejner.addEventListener('click', function(e) {
+            const rect = kontejner.getBoundingClientRect();
+            // Spočítáme přesné X a Y podle toho, kam jsi klikl
+            const x = Math.round(e.clientX - rect.left);
+            const y = Math.round(e.clientY - rect.top);
+            
+            body.push({x, y});
+            prekresli();
+        });
+
+        // Vykreslení červené čáry a textu
+        function prekresli() {
+            if (body.length === 0) {
+                pathEl.setAttribute('d', '');
+                vysledekEl.value = '';
+                return;
+            }
+            let d = `M ${body[0].x} ${body[0].y}`;
+            for (let i = 1; i < body.length; i++) {
+                d += ` L ${body[i].x} ${body[i].y}`;
+            }
+            pathEl.setAttribute('d', d);
+            vysledekEl.value = d;
+        }
+
+        function krokZpet() { body.pop(); prekresli(); }
+        function vymazatVse() { body = []; prekresli(); }
+    </script>
+</body>
+</html>

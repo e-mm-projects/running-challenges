@@ -30,7 +30,7 @@ function vybratVyzvu(idVyzvy, celkoveKm) {
     }
 
     // Přesměrujeme uživatele na stránku s detailem výzvy
-    window.location.href = "vyzva-" + idVyzvy + ".html";
+    window.location.href = "detail-vyzvy.html";
 }
 
 // Najdeme tlačítko pro odhlášení

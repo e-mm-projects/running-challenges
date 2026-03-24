@@ -310,12 +310,29 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Jemný stín */
 }
 
+/* --- BOXÍK PRO POSLEDNÍ ZÁZNAM --- */
+.posledni-beh-box {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 15px;
+    color: #555;
+    text-align: center;
+}
+.posledni-beh-box strong {
+    color: #4CAF50; /* Zelená barva pro zvýraznění dat */
+}
+
+
 /* --- MAPA A PANÁČEK --- */
 .mapa-kontejner {
     position: relative;
     display: inline-block;
     margin: 20px auto 40px auto;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     overflow: visible; 
 }
@@ -325,6 +342,7 @@ button:hover {
     width: 100%;
     height: auto;
     z-index: 1;
+    border-radius: 15px;
 }
 
 /* Průhledné plátno přes mapu, na kterém je nakreslená žlutá trasa */
@@ -425,13 +443,11 @@ button:hover {
 /* Okno s posuvníky */
 .zoom-okno {
     width: 100%;
-    /* Odstranili jsme fixní výšku a dali poměr stran podle tvé mapy (2087:1221) */
-    aspect-ratio: 2096 / 1234; 
-    overflow: auto; /* Posuvník se ukáže AŽ po přiblížení */
+    /* aspect-ratio jsme smazali, bude ho dodávat JavaScript! */
+    overflow: auto; 
     border: 2px solid #ccc;
     border-radius: 12px;
     background-color: #e9e9e9;
-    /* Skryjeme případné prázdné mezery na spodku */
     display: block; 
 }
 
@@ -691,4 +707,68 @@ button:hover {
         font-size: 35px; /* Zvětšíme ho, aby se na něj na mobilu lépe trefovalo prstem */
         z-index: 1001; /* Zůstane nad mapou, tečkami i textem v modalu */
     }
+}
+
+/* --- VYCENTROVANÉ POZADÍ PRO BRADAVICE --- */
+body.pozadi-bradavice {
+    /* 1. Barva okrajů (bílá jako u Říma) */
+    background-color: #ffffff; 
+    
+    background-image: url('images/cesta-do-bradavic/bradavice-background.jpg');
+    
+    /* 3. Vycentrování a chování pásu */
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    /* 4. Tady nastavíme šířku toho temného pásu. Můžeš dát 1100px jako u Říma. */
+    background-size: 1200px 100vh; 
+}
+
+/* Zlaté nadpisy jako z Harryho Pottera */
+body.pozadi-bradavice h1,
+body.pozadi-bradavice h2 {
+    color: #f1c40f; /* Typická zlatavá barva */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Výrazný černý stín, aby to na pozadí svítilo */
+}
+
+/* --- ZMENŠENÍ OKNA MAPY PRO BRADAVICE --- */
+body.pozadi-bradavice .hlavni-obal-mapy {
+    max-width: 800px; /* Tímto omezíme šířku celého bloku. Můžeš zkusit i 700px nebo 900px */
+    margin: 0 auto 40px auto; /* Zaručí, že mapa zůstane vycentrovaná uprostřed stránky */
+}
+
+/* Úprava tlačítek zoomu, aby na menší mapě moc neřvala */
+body.pozadi-bradavice .zoom-ovladani {
+    bottom: 15px;
+    left: 15px;
+}
+
+/* Jemné stylování bodů na mapě, aby ladily s magií */
+.mapa-bradavice .bod-mapy.navstiveno {
+    background-color: #f1c40f; /* Zlaté tečky místo běžných zelených/žlutých */
+    border-color: #d35400;     
+    box-shadow: 0 0 15px #f1c40f; /* Krásně to bude zářit */
+}
+
+/* --- IKONA VLAKU PRO BRADAVICE --- */
+.mapa-bradavice #panacek {
+    background: none;       /* Odstraní případné pozadí (třeba zelenou pilulku), pokud tam zůstala */
+    font-size: 0;           /* Schováme text/emoji */
+    width: 40px;            /* ŠÍŘKA VLAKU: Tady můžeš měnit velikost (zkus klidně 50px nebo 80px) */
+    height: auto;
+    
+    /* Nejdůležitější část: Vycentruje vlak tak, aby jeho spodní střed (kolečka) seděl přesně na trase */
+    transform: translate(-50%, -100%);
+}
+
+/* Styly pro samotný obrázek vlaku */
+.panacek-ikona-bradavice {
+    width: 100%;
+    height: auto;
+    display: block; /* Zabrání podivným mezerám pod obrázkem */
+    
+    /* MALÝ TRIK: Pokud máš obrázek vlaku, který míří doprava, ale tvoje trasa vede doleva 
+       (nebo naopak), stačí smazat lomítka a hvězdičky u řádku níže a vlak se zrcadlově otočí! */
+    /* transform: scaleX(-1); */
 }
