@@ -772,3 +772,96 @@ body.pozadi-bradavice .zoom-ovladani {
        (nebo naopak), stačí smazat lomítka a hvězdičky u řádku níže a vlak se zrcadlově otočí! */
     /* transform: scaleX(-1); */
 }
+
+/* =========================================================
+   --- SPECIÁLNÍ STYLY PRO VÝZVU DARK PORTAL (wow) ---
+   ========================================================= */
+
+/* 1. VYCENTROVANÉ POZADÍ STRÁNKY (Temně zelená/ Fel magie) */
+body.pozadi-wow {
+    /* Základní barva okrajů (bílá nebo velmi světle šedá) */
+    background-color: #ffffff; 
+    
+    /* Vytvoříme temně zelený pás uprostřed pomocí linear-gradientu */
+    /* Barva #0d1a0d je velmi tmavě zelená, ladící k Fel magii */
+    background-image: linear-gradient(#245d24, #0d1a0d); 
+    
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    /* ŠÍŘKA PÁSU: Nastavíme ji třeba na 1200px, aby byl o kousek širší než mapa */
+    background-size: 1300px 100vh; 
+}
+
+/* Světlé nadpisy, aby šly přečíst na tmavém pozadí */
+body.pozadi-wow h1,
+body.pozadi-wow h2 {
+    color: #ccffcc; /* Velmi světle zelená */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+/* 2. ZMENŠENÍ OBALU MAPY PŘESNĚ PODLE OBRÁZKU */
+body.pozadi-wow .hlavni-obal-mapy {
+    /* !!! TADY DOPLŇ SKUTEČNOU ŠÍŘKU SVÉ MAPY V PIXELECH !!! */
+    max-width: 1219px; /* Změň 1000 na své číslo! */
+    
+    margin: 0 auto 40px auto; /* Vycentrování a mezera dole */
+    border: 3px solid #1a331a; /* Tmavě zelený rámeček kolem mapy */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Výraznější stín */
+}
+
+/* Drobná úprava tlačítek zoomu */
+body.pozadi-wow .zoom-ovladani {
+    bottom: 15px;
+    left: 15px;
+}
+/* 3. ZPRŮHLEDNĚNÍ OKNA MAPY (pro PNG mapu WoW) */
+body.pozadi-wow .zoom-okno {
+    /* Odstraní tu šedou barvu pozadí */
+    background-color: transparent; 
+    
+    /* Můžeš si pohrát i s okrajem. Buď ho necháš, nebo dáš "none" pro čistý levitující efekt: */
+    border: none; 
+}
+
+/* --- WOW XP BAR (LEVELING) --- */
+#wow-level-kontejner {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.wow-level-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffcc00; /* Klasická WoW zlatá barva textu */
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 5px;
+}
+
+/* Obal XP baru s trochu hrubším rámečkem */
+.wow-xp-bar-obal {
+    height: 18px;
+    background-color: #222;
+    border: 2px solid #555;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    margin-bottom: 5px;
+}
+
+/* Samotná výplň XP baru */
+#wow-xp-bar-vypln {
+    height: 100%;
+    width: 0%;
+    background-color: #800080; /* Fialová barva (Rested XP) - můžeš změnit na modrou #0066cc */
+    transition: width 0.5s ease-out;
+}
+
+/* Malý textík pod barem */
+.wow-xp-info {
+    font-size: 13px;
+    color: #aaa;
+}

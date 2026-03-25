@@ -118,6 +118,100 @@ const databazeVyzev = {
             { km: 950, nazev: "Glenfinnan Viaduct", text: "Slyšíš to houkání? Právě běžíš pod slavným viaduktem, přes který jezdí Bradavický expres! Most má 21 oblouků a za ním už tě čeká jen cíl.", img: "images/cesta-do-bradavic/glenfinnan.jpg" },
             { km: 1010, nazev: "Loch Shiel (Bradavice)", text: "DOKÁZAL JSI TO! Stojíš na břehu jezera Loch Shiel, které představovalo Černé jezero. V dálce už vidíš tyčit se bradavický hrad. 1010 kilometrů plných magie je za tebou!", img: "images/cesta-do-bradavic/loch-shiel.jpg" }
         ]
+    },
+
+    "dark-portal": {
+        nazev: "Ze Stormwindu k Dark Portalu",
+        celkoveKm: 116,
+        tridaPozadi: "pozadi-wow",        
+        tridaMapy: "mapa-wow",            
+        mapaImg: "images/dark-portal/wow-map.png", // zkontroluj koncovku .jpg/.png
+        svgViewBox: "0 0 1219 1173", // DOPLŇ SVÁ ČÍSLA
+        svgPath: "M 298 95 L 341 146 L 372 158 L 389 199 L 461 223 L 513 187 L 552 168 L 542 115 L 572 89 L 606 101 L 620 139 L 620 191 L 640 227 L 576 224 L 558 212 L 535 230 L 468 255 L 379 265 L 347 239 L 316 246 L 276 243 L 232 271 L 220 288 L 169 305 L 147 299 L 106 340 L 120 375 L 142 415 L 149 448 L 203 452 L 226 447 L 221 411 L 236 371 L 227 335 L 228 303 L 291 305 L 317 338 L 404 332 L 448 306 L 504 286 L 561 300 L 604 302 L 652 299 L 723 246 L 760 217 L 806 195 L 814 142 L 852 115 L 874 90 L 883 130 L 938 130 L 958 157 L 972 133 L 1009 135 L 1028 168 L 1031 204 L 984 232 L 926 233 L 905 216 L 840 227 L 787 230 L 752 208 L 728 214 L 680 227 L 656 267 L 600 328 L 590 360 L 611 383 L 648 372 L 604 396 L 600 417 L 574 427 L 530 437 L 512 455 L 480 447 L 474 395 L 465 439 L 415 420 L 387 411 L 360 370 L 333 367 L 330 427 L 359 478 L 384 439 L 422 437 L 459 453 L 463 515 L 454 531 L 456 557 L 410 599 L 389 573 L 339 581 L 287 585 L 301 611 L 334 633 L 413 630 L 442 666 L 488 666 L 505 689 L 504 709 L 477 721 L 471 771 L 444 798 L 428 855 L 396 862 L 365 862 L 381 883 L 382 923 L 362 953 L 352 979 L 354 1027 L 347 1046 L 323 1043 L 315 1066 L 340 1057 L 385 1065 L 353 1107 L 384 1059 L 331 1053 L 350 1031 L 348 985 L 387 930 L 388 875 L 409 856 L 442 853 L 452 803 L 470 720 L 550 717 L 550 674 L 545 642 L 567 622 L 544 580 L 467 547 L 452 527 L 470 487 L 516 483 L 555 442 L 601 389 L 667 381 L 710 380 L 740 370 L 780 368 L 806 364 L 832 346 L 868 340 L 896 338 L 908 313 L 953 312 L 977 314 L 996 279 L 1012 279 L 1042 266 L 1061 266 L 1093 246 L 1127 260 L 1144 280 L 1155 311 L 1156 352 L 1158 386 L 1135 410 L 1105 412 L 1068 391 L 1038 364 L 992 359 L 952 359 L 951 371 L 956 395 L 944 416 L 940 442 L 936 470 L 900 451 L 904 480 L 898 509 L 894 540 L 927 534 L 967 510 L 1000 497 L 1016 514 L 1016 545 L 991 559 L 972 571 L 986 614",
+        mapaSirka: 1219,              
+        mapaVyska: 1173,              
+        povolitZoom: true,             
+        panacekHtml: "⚔️",
+        seznamMist: [
+            { 
+                km: 0.1, 
+                nazev: "Brány Stormwindu", 
+                text: "Tvoje epická cesta začíná. Za zády necháváš monumentální sochy ve Valley of Heroes a v uších ti zní ta nejikoničtější hudba z celého Azerothu. Čas vyrazit expit!", 
+                img: "images/dark-portal/stormwind.jpg" 
+            },
+            { 
+                km: 2.1, 
+                nazev: "Goldshire", 
+                text: "Slavný hostinec Lion's Pride Inn. Venku se neustále někdo dueluje a uvnitř to žije. Jen radši nechoď do patra, občas se tam zjevují podivné, děsivé děti v pentagramu...", 
+                img: "images/dark-portal/goldshire.jpg" 
+            },
+            { 
+                km: 22, 
+                nazev: "Sentinel Hill", 
+                text: "Vstupuješ do Westfallu. Zlatá pole drancují zbláznění žací golemové a v Deadmines se skrývá Bratrstvo Defias pod vedením Edwina VanCleefa. Nenech se chytit!", 
+                img: "images/dark-portal/westfall.jpg" 
+            },
+            { 
+                km: 33.5, 
+                nazev: "Lakeshire", 
+                text: "Přejdi slavný (a věčně rozbitý) most přes jezero Everstill. Okolo se to hemží orky z klanu Blackrock. Možná tu někde narazíš i na legendárního Johna J. Keeshana.", 
+                img: "images/dark-portal/redridge.jpg" 
+            },
+            { 
+                km: 47.9, 
+                nazev: "Darkshire", 
+                text: "Duskwood. Slunce tu nesvítí, z lesa vyjí worgeni a na hřbitově straší nemrtvý Morladim. Hlavně se nepoflakuj na cestě, občas tu hlídkuje obří abominace Stitches!", 
+                img: "images/dark-portal/duskwood.jpg" 
+            },
+            { 
+                km: 60.5, 
+                nazev: "Stranglethorn Vale", 
+                text: "Vítej v džungli! Raptoři, panteři a maskovaní trollové na každém kroku. Z dálky slyšíš, jak Hemet Nesingwary pořádá své lovecké výpravy. A nezapomeň sbírat ztracené stránky do knihy!", 
+                img: "images/dark-portal/stv.jpg" 
+            },
+            { 
+                km: 71.69, 
+                nazev: "Gurubashi Arena", 
+                text: "Vstupuješ do slavné krvavé arény, kde neplatí žádná pravidla. Aliance nebo Horda, tady jde každý po každém! Každé tři hodiny se uprostřed objeví truhla s pokladem. Troufneš si pro ni?", 
+                img: "images/dark-portal/gurubashi.jpg" 
+            },
+            { 
+                km: 75.6, 
+                nazev: "Booty Bay", 
+                text: "Neutrální město pirátů a pašeráků, kterému vládne goblinský Baron Revilgaz. Nádherný výhled na moře a klidná zóna... dokud nezaútočíš na jiného hráče a nesesypou se na tebe drsné stráže!", 
+                img: "images/dark-portal/booty.jpg" 
+            },
+            { 
+                km: 88, 
+                nazev: "Zul'Gurub", 
+                text: "Zříceniny obrovského města prastarých trollů. Kdysi se tady ozývalo volání Krvavého boha Hakkara a hrdinové tu trávili týdny, aby získali bájného tygra nebo raptora. Atmosféra tu dodnes nahání husí kůži.", 
+                img: "images/dark-portal/zulgurub.jpg" 
+            },
+            { 
+                km: 95.6, 
+                nazev: "Deadwind Pass", 
+                text: "Z džungle jsi uhnul do mrtvého průsmyku. Všude jsou jen uschlé stromy, supi a hutná magická energie. Vysoko nad tebou se tyčí Karazhan, věž samotného Strážce Medivha. Jen proběhni a nezastavuj.", 
+                img: "images/dark-portal/karazhan.jpg" 
+            },
+            { 
+                km: 98, 
+                nazev: "Swamp of Sorrows", 
+                text: "Bahno, žáby a nekonečné zástupy Murloců (Mrglrlrlrmgrl!). Hluboko v bažinách leží potopený Temple of Atal'Hakkar, domov zelených draků. Vzduch tu začíná být pořádně těžký.", 
+                img: "images/dark-portal/swamp.jpg" 
+            },
+            { 
+                km: 109, 
+                nazev: "Blasted Lands", 
+                text: "Země spálená na troud. Nebe získalo zlověstný rudý odstín, z trhlin šlehá fel magie a všude pobíhají obří démoni. Sem se odvažují jen ti nejsilnější.", 
+                img: "images/dark-portal/blasted.jpg" 
+            },
+            { 
+                km: 116, 
+                nazev: "The Dark Portal", 
+                text: "Dokázal jsi to! Dosáhl jsi potřebného levelu a stojíš před gigantickým Temným portálem, který propojuje Azeroth s Outlandem. Jsi připraven? (Protože Illidan tvrdí, že nejsi!). Klobouk dolů!", 
+                img: "images/dark-portal/darkportal.jpg" 
+            }
+        ]
     }
 }
 

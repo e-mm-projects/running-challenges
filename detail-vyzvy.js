@@ -146,6 +146,49 @@ function aktualizujStatistiky() {
 
     document.getElementById("body-na-mape").innerHTML = teckyHtml;
     document.getElementById("seznam-zajimavosti").innerHTML = kartickyHtml;
+
+    // ==========================================
+    // WOW LEVELING SYSTÉM (Speciální funkce)
+    // ==========================================
+    const wowKontejner = document.getElementById("wow-level-kontejner");
+    
+    if (wowKontejner) { // Pokud prvek v HTML existuje
+        if (aktualniVyzva === 'dark-portal') {
+            // Zobrazíme ho, protože jsme ve WoW výzvě
+            wowKontejner.style.display = "block";
+            
+            // 1 level = 2 km. 
+            // Použijeme Math.floor (zaokrouhlení dolů), takže např. 5.5 km / 2 = 2.75 -> Level 2
+            let level = Math.floor(nabehanoKm / 2);
+            
+            // Pojistky: začínáme na levelu 1 a končíme max na 58
+            if (level < 1) level = 1;
+            if (level > 58) level = 58;
+            
+            // Výpočet XP (procenta v proužku)
+            let zbytekKm = nabehanoKm % 2; // Kolik km máme naběháno v aktuálním levelu
+            let xpProcenta = (zbytekKm / 2) * 100;
+            let chybikmDoLevelu = (2 - zbytekKm).toFixed(1);
+            
+            // Pokud jsme cíl splnili, ukážeme plný bar a level 58
+            if (nabehanoKm >= ciloveKm) {
+                level = 58;
+                xpProcenta = 100;
+                chybikmDoLevelu = "0.0";
+            }
+            
+            // Propíšeme čísla do HTML
+            document.getElementById("wow-aktualni-level").innerText = level;
+            document.getElementById("wow-xp-bar-vypln").style.width = xpProcenta + "%";
+            document.getElementById("wow-xp-zbytek").innerText = chybikmDoLevelu;
+            
+        } else {
+            // Pokud jsme v Bradavicích, Římě nebo jinde, boxík úplně schováme
+            wowKontejner.style.display = "none";
+        }
+    }
+
+
 }
 
 aktualizujStatistiky();
