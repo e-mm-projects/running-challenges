@@ -56,24 +56,11 @@ body.pozadi-rim h2 {
 
 /* --- VYCENTROVANÝ PÁS POZADÍ PRO MOUNT DOOM --- */
 body.pozadi-doom {
-    /* 1. Barva okrajů (to, co zbyde po stranách) */
     background-color: #ffffff; 
-    
-    /* 2. Tvůj obrázek */
     background-image: url('images/mount-doom-challenge/mountdoombackground.png');
-    
-    /* 3. Obrázek vycentrujeme přesně doprostřed okna */
     background-position: center center; 
-    
-    /* 4. Zakážeme mu, aby se na obrazovce dál množil a opakoval */
     background-repeat: no-repeat;
-    
-    /* 5. Udržíme ho na místě i při scrollování dolů */
     background-attachment: fixed; 
-    
-    /* 6. TO HLAVNÍ (VELIKOST): 
-       První číslo (1500px) je šířka. Protože mapa má 1400px, pozadí ji přesáhne o 50px z každé strany. 
-       Druhé číslo (100vh) znamená, že se natáhne přesně odshora dolů (100 % výšky okna). */
     background-size: 1500px 100vh; 
 }
 
@@ -281,6 +268,34 @@ button:hover {
 .btn-vybrat:hover { background-color: #45a049; }
 
 
+/* --- MINI PROGRESS BAR NA KARTÁCH VÝZEV --- */
+.mini-progress-obal {
+    margin-bottom: 12px;
+}
+
+.mini-progress-text {
+    font-size: 13px;
+    color: #f1e892; /* Zářivě žlutá/zlatá, aby to vyniklo na tmavém pozadí */
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.mini-progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.3); /* Poloprůhledné pozadí proužku */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mini-progress-vypln {
+    height: 100%;
+    background-color: #f3e77d; /* Zlatá výplň hotových km */
+    width: 0%; /* Toto se bude doplňovat přes JS */
+}
+
+
 /* --- ŠTÍTKY NÁROČNOSTI --- */
 .stitek {
     position: absolute; 
@@ -301,6 +316,17 @@ button:hover {
 .stitek-tezka { background-color: #f8d7da; color: #721c24; }
 /* Extrémní má navíc zlatý rámeček */
 .stitek-extremni { background-color: #1a1a1a; color: #ffeb3b; border: 1px solid #ffeb3b; }
+
+
+/* Speciální pozadí pro celou nástěnku výzev */
+body.pozadi-dashboard {
+    background-image: url('images/pozadi-vyzev.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat;    
+    background-color: #ffffff; /* Záložní bílá, pokud by se obrázek nenačetl */
+}
 
 
 /* 5. VZHLED STRÁNKY S VÝZVOU */
@@ -666,13 +692,14 @@ button:hover {
 .filtr-btn {
     padding: 8px 18px;
     border: 2px solid #ddd;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.85);
     border-radius: 25px; /* Zakulacený "pill" tvar */
     font-size: 14px;
     font-weight: bold;
     color: #555;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* Efekt po najetí myší a pro aktivní vybraný filtr */

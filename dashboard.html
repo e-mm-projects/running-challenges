@@ -6,7 +6,7 @@
     <title>Výběr výzvy</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="pozadi-dashboard">
 
     <h1>Vyber si svou výzvu:</h1>
 
@@ -14,22 +14,20 @@
         <button id="odhlasit-btn" class="tlacitko-zpet">Odhlásit se a zpět</button>
     </div>
 
-    <div class="filtry-kontejner">
+<div class="filtry-kontejner">
         <button class="filtr-btn aktivni" data-filtr="vse">Všechny</button>
+        <button class="filtr-btn" data-filtr="rozehrane">Moje výzvy</button>
         <button class="filtr-btn" data-filtr="snadna">Snadná</button>
         <button class="filtr-btn" data-filtr="stredni">Střední</button>
         <button class="filtr-btn" data-filtr="tezka">Těžká</button>
         <button class="filtr-btn" data-filtr="extremni">Extrémní</button>
     </div>
 
-
     <div class="seznam-vyzev">
         
-        <div class="vyzva-karta" data-obtiznost="tezka" style="background-image: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80');">
+        <div class="vyzva-karta" data-obtiznost="tezka" data-id="rim" data-celkem="1543" style="background-image: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80');">
             <div class="overlay-prechod"></div>
-            
             <span class="stitek stitek-tezka">Těžká</span>
-            
             <div class="obsah-karty">
                 <h2>Z Prahy do Říma</h2>
                 <p><strong>Délka trasy:</strong> 1543 km</p>
@@ -37,11 +35,9 @@
             </div>
         </div>
 
-        <div class="vyzva-karta" data-obtiznost="snadna" style="background-image: url('images/lipno.jpg');">
+        <div class="vyzva-karta" data-obtiznost="snadna" data-id="lipno" data-celkem="22" style="background-image: url('images/lipno.jpg');">
             <div class="overlay-prechod"></div>
-            
             <span class="stitek stitek-snadna">Snadná</span>
-            
             <div class="obsah-karty">
                 <h2>Okolo Lipna</h2>
                 <p><strong>Délka trasy:</strong> 22 km</p>
@@ -49,11 +45,9 @@
             </div>
         </div>
 
-        <div class="vyzva-karta" data-obtiznost="extremni" style="background-image: url('images/mount-doom.jpg');">
+        <div class="vyzva-karta" data-obtiznost="extremni" data-id="mount-doom" data-celkem="2863" style="background-image: url('images/mount-doom.jpg');">
             <div class="overlay-prechod"></div>
-            
             <span class="stitek stitek-extremni">Extrémní 🔥</span>
-            
             <div class="obsah-karty">
                 <h2>Mount Doom Challenge</h2>
                 <p><strong>Délka trasy:</strong> 2863 km</p>
@@ -61,11 +55,9 @@
             </div>
         </div>
 
-        <div class="vyzva-karta" data-obtiznost="stredni" style="background-image: url('images/brno.jpg');">
+        <div class="vyzva-karta" data-obtiznost="stredni" data-id="brno" data-celkem="100" style="background-image: url('images/brno.jpg');">
             <div class="overlay-prechod"></div>
-            
             <span class="stitek stitek-stredni">Střední</span>
-            
             <div class="obsah-karty">
                 <h2>Z Prahy do Brna</h2>
                 <p><strong>Délka trasy:</strong> 100 km</p>
@@ -73,10 +65,9 @@
             </div>
         </div>
 
-        <div class="vyzva-karta" data-obtiznost="tezka" style="background-image: url('images/cesta-do-bradavic/bradavice-background.jpg');">
+        <div class="vyzva-karta" data-obtiznost="tezka" data-id="bradavice" data-celkem="1010" style="background-image: url('images/cesta-do-bradavic/bradavice-background.jpg');">
             <div class="overlay-prechod"></div>
             <span class="stitek stitek-tezka">Těžká</span>
-            
             <div class="obsah-karty">
                 <h2>Cesta do Bradavic</h2>
                 <p><strong>Délka trasy:</strong> 1010 km</p>
@@ -84,29 +75,25 @@
             </div>
         </div>
 
-        <div class="vyzva-karta" data-obtiznost="stredni" style="background-image: url('images/dark-portal/dark-portal.jpg');">
+        <div class="vyzva-karta" data-obtiznost="stredni" data-id="dark-portal" data-celkem="116" style="background-image: url('images/dark-portal/dark-portal.jpg');">
             <div class="overlay-prechod"></div>
             <span class="stitek stitek-stredni">Střední ⚔️</span>
-            
             <div class="obsah-karty">
-                <h2>Ze Stormwindu k Dark Portalu</h2>
+                <h2>Ze Stormwindu k Portalu</h2>
                 <p><strong>Délka trasy:</strong> 116 km</p>
                 <button onclick="vybratVyzvu('dark-portal', 116)" class="btn-vybrat">Zobrazit výzvu</button>
             </div>
         </div>
 
-        <div class="vyzva-karta" data-obtiznost="stredni" style="background-image: url('images/game-of-thrones/kings-landing.jpg');">
+        <div class="vyzva-karta" data-obtiznost="stredni" data-id="got" data-celkem="100" style="background-image: url('images/game-of-thrones/kings-landing.jpg');">
             <div class="overlay-prechod"></div>
-            
             <span class="stitek stitek-stredni">Střední</span>
-            
             <div class="obsah-karty">
                 <h2>Po stopách Eddarda Starka</h2>
                 <p><strong>Délka trasy:</strong> 100 km</p>
                 <button onclick="window.location.href='pripravujese.html'" class="btn-vybrat">Zobrazit výzvu</button>
             </div>
         </div>
-
 
     </div>
 
