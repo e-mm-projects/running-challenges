@@ -1,25 +1,29 @@
-// 1. Nejdříve si najdeme tlačítko a textové políčko v HTML pomocí jejich 'id'
-const tlacitkoPrihlasit = document.getElementById("prihlasit-btn");
-const inputJmeno = document.getElementById("jmeno-uzivatele");
-
-// 2. Tlačítku přidáme "posluchače" (EventListener). 
-// Ten bude čekat, až na tlačítko někdo klikne ("click").
-tlacitkoPrihlasit.addEventListener("click", function() {
+// Do závorky jsme přidali slovo 'event', abychom mohli formuláři říct, jak se má chovat
+function prihlasit(event) {
     
-    // 3. Zjistíme, co uživatel napsal do políčka, a odstraníme případné mezery na začátku a konci (trim)
+    // 1. Zabráníme prohlížeči, aby po odklepnutí Enterem nesmyslně obnovil stránku
+    if (event) {
+        event.preventDefault();
+    }
+    
+    // 2. Najdeme políčko podle jeho ID
+    const inputJmeno = document.getElementById("jmeno");
+
+    // 3. Zjistíme, co uživatel napsal (a ořízneme mezery)
     const zadaneJmeno = inputJmeno.value.trim();
 
-    // 4. Zkontrolujeme, jestli políčko není prázdné
+    // 4. Zkontrolujeme, jestli nezůstalo prázdné
     if (zadaneJmeno !== "") {
         
-        // 5. Uložíme jméno do paměti prohlížeče (localStorage) pod klíčem "uzivatel"
+        // 5. Uložíme jméno (v tuhle chvíli si ho uloží i prohlížeč do svého našeptávače!)
         localStorage.setItem("uzivatel", zadaneJmeno);
         
-        // 6. Přesměrujeme uživatele na stránku s nástěnkou
-        window.location.href = "dashboard.html";
+        // 6. Přesměrujeme tě na nástěnku
+        setTimeout(function(){
+            window.location.href = "dashboard.html";
+        }, 100);
         
     } else {
-        // Pokud nic nezadal, ukážeme mu varování
         alert("Prosím, zadej nejprve své jméno.");
     }
-});
+}

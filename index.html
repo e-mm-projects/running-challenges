@@ -6,17 +6,22 @@
     <title>Běžecké výzvy - Přihlášení</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="pozadi-index">
 
-    <div class="prihlasovaci-okno">
-        <h1>Přihlašovací obrazovka</h1>
-        <p>Zadej své jméno pro přihlášení:</p>
+    <div class="uvodni-obal">
         
-        <input type="text" id="jmeno-uzivatele" placeholder="Zadej své uživatelské jméno">
-        
-        <button id="prihlasit-btn">Vstoupit do výzev</button>
+        <h1 class="uvodni-nadpis">A na jakou cestu se vydáš ty?</h1>
+        <p class="uvodni-popis">Stačí se přihlásit a můžeš si své nachozené, naběhané, nebo klidně na kole najeté kilometry ukládat na jakoukoli z výzev, které jsou pro tebe připraveny.</p>
+
+        <form class="prihlasovaci-okno" onsubmit="prihlasit(event)">
+            <input type="text" id="jmeno" name="jmeno" placeholder="Zadej své jméno..." autocomplete="username">
+            <br>
+            <button type="submit">Začít dobrodružství</button>
+        </form>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>

@@ -84,15 +84,71 @@ body.pozadi-doom h2 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Výrazný tmavý stín kolem písmen */
 }
 
-/* 2. PŘIHLAŠOVACÍ OKNO (Z index.html) */
-.prihlasovaci-okno {
-    background-color: white;
-    max-width: 400px; /* Okno nebude širší než 400 pixelů */
-    margin: 50px auto; /* 50px mezera nahoře/dole, 'auto' po stranách to vycentruje! */
-    padding: 30px; /* Vnitřní prostor, aby text nebyl nalepený na okrajích */
-    border-radius: 12px; /* Zakulatíme rohy */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Přidáme jemný stín pro 3D efekt */
+/* =========================================================
+   --- 2. ÚVODNÍ STRÁNKA A PŘIHLAŠOVÁNÍ (INDEX) ---
+   ========================================================= */
+
+/* Speciální pozadí JEN pro přihlašovací obrazovku */
+body.pozadi-index {
+    background-image: url('images/login-image-background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* Lehký tmavý závoj přes obrázek, aby bílý text perfektně svítil a byl čitelný */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    
+    /* Tento trik vycentruje celý obsah přesně doprostřed monitoru */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
+
+/* Obal pro nadpis, text a okno */
+.uvodni-obal {
+    max-width: 650px;
+    text-align: center;
+}
+
+/* Ten hezký "příběhový" nadpis */
+.uvodni-nadpis {
+    font-family: 'Georgia', 'Times New Roman', serif; /* Elegantní patkové písmo */
+    font-size: 42px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Silný stín pro čitelnost */
+    margin-bottom: 20px;
+    font-style: italic; /* Kurzíva tomu dodá ten správný šmrnc */
+}
+
+/* Tvůj informační text */
+.uvodni-popis {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f4f4f4;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    margin-bottom: 40px;
+}
+
+/* Návrat k jednoduchému přihlašovacímu oknu */
+.prihlasovaci-okno {
+    background-color: rgba(255, 255, 255, 0.95); /* Téměř neprůhledná bílá */
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Hezký hluboký stín pod oknem */
+}
+
+/* Zrušíme případné další rámečky kolem inputu a zajistíme plnou šířku */
+.prihlasovaci-okno input {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 
 /* 3. VZHLED TLAČÍTEK A POLÍČEK */
 input {
@@ -103,6 +159,7 @@ input {
     border-radius: 6px;
     font-size: 16px;
 }
+
 
 button {
     background-color: #4CAF50; /* Hezká zelená barva */
