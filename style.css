@@ -101,14 +101,15 @@ body.pozadi-index {
     text-align: center;
 }
 
-/* Ten hezký "příběhový" nadpis */
 .uvodni-nadpis {
-    font-family: 'Georgia', 'Times New Roman', serif; /* Elegantní patkové písmo */
-    font-size: 42px;
-    color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Silný stín pro čitelnost */
-    margin-bottom: 20px;
-    font-style: italic; /* Kurzíva tomu dodá ten správný šmrnc */
+    font-family: 'Cinzel', serif; 
+    font-size: 45px;              
+    color: #fdfbf7;               
+    letter-spacing: 2px;          
+    
+    /* Magický dvojitý stín - zajistí, že nadpis bude čitelný na jakémkoliv pozadí */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 
+                 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
 /* Tvůj informační text */
@@ -196,6 +197,18 @@ button:hover {
 }
 
 /* 4. VZHLED VÝZEV (Z dashboard.html) */
+/* --- EPICKÝ NADPIS NA DASHBOARDU --- */
+.pozadi-dashboard h1 {
+    font-family: 'Cinzel', serif; /* Náš nový fantasy font */
+    font-size: 35px;              /* Znatelně větší velikost */
+    color: #fdfbf7;               /* Lehce "pergamenná" bílá barva */
+    letter-spacing: 2px;          /* Trošku větší mezery mezi písmeny pro majestátnost */
+    
+    /* Magický dvojitý stín - zajistí, že nadpis bude čitelný na jakémkoliv pozadí */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 
+                 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
 /* --- DASHBOARD: MŘÍŽKA VÝZEV --- */
 .seznam-vyzev {
     display: flex;
@@ -446,7 +459,7 @@ body.pozadi-dashboard {
 /* Náš běžec */
 #panacek {
     position: absolute;
-    font-size: 40px; 
+    font-size: 30px; 
     /* Nyní se panáček musí umět pohybovat plynule doleva/doprava i nahoru/dolů! */
     transition: left 1s ease-in-out, top 1s ease-in-out; 
     z-index: 10; 
@@ -857,6 +870,81 @@ body.pozadi-bradavice .zoom-ovladani {
     /* transform: scaleX(-1); */
 }
 
+/* --- IKONKY ŽABEK NA MAPĚ --- */
+.bod-zabka {
+    position: absolute;
+    transform: translate(-50%, -50%); /* Vycentrování přesně na trasu */
+    font-size: 14px; /* Otazník bude maličký */
+    z-index: 5;
+    cursor: help;
+    opacity: 0.6; /* Nenavštívené jsou průhlednější */
+    transition: all 0.3s ease;
+}
+
+/* Když se otazník změní v žábu */
+.bod-zabka.navstiveno {
+    font-size: 12px; /* Žába se zvětší */
+    opacity: 1;
+    z-index: 6; /* Bude nad ostatními tečkami */
+    filter: drop-shadow(0px 0px 5px rgba(255, 215, 0, 0.8)); /* Zlatá záře kolem žáby! */
+}
+
+/* --- ROZBALOVACÍ MENU PRO SBÍRKU --- */
+.rozbalovaci-sekce summary {
+    cursor: pointer;
+    list-style: none; /* Schová výchozí ošklivou šipku */
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Webkit pojistka pro skrytí šipky */
+.rozbalovaci-sekce summary::-webkit-details-marker {
+    display: none;
+}
+
+.rozbalovaci-sekce summary h2 {
+    display: inline-block;
+    background-color: #d4af37; /* Zlatá barva HP */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px; /* Tvar pilulky */
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+    margin: 0;
+}
+
+.rozbalovaci-sekce summary:hover h2 {
+    transform: scale(1.05);
+    background-color: #b8962e;
+}
+
+/* =========================================================
+   --- OPRAVA PORTRETU KARTIČEK PRO ŽABKY ---
+   ========================================================= */
+
+/* Cílíme pouze na kartičky uvnitř seznamu žabek */
+#seznam-zabek .karta-zajimavosti {
+    width: 180px;     /* Kartičky budou užší (portrét) */
+    height: auto;      /* Výška se přizpůsobí obsahu */
+    display: flex;
+    flex-direction: column; /* Položky pod sebou */
+}
+
+/* Úprava samotného obrázku uvnitř žabí kartičky */
+#seznam-zabek .karta-zajimavosti img {
+    height: 190px;     /* Zvětšíme fixní výšku, aby byl obrázek vysoký portrét */
+    width: 100%;       /* Plná šířka kartičky */
+    object-fit: contain; background-color: #0e0000;
+}
+
+/* Drobná úprava textu, aby se vešel do užší kartičky */
+#seznam-zabek .karta-zajimavosti h3 {
+    font-size: 14px;
+    margin: 8px 10px 4px 10px;
+}
+
 /* =========================================================
    --- SPECIÁLNÍ STYLY PRO VÝZVU DARK PORTAL (wow) ---
    ========================================================= */
@@ -888,8 +976,7 @@ body.pozadi-wow h2 {
 
 /* 2. ZMENŠENÍ OBALU MAPY PŘESNĚ PODLE OBRÁZKU */
 body.pozadi-wow .hlavni-obal-mapy {
-    /* !!! TADY DOPLŇ SKUTEČNOU ŠÍŘKU SVÉ MAPY V PIXELECH !!! */
-    max-width: 1219px; /* Změň 1000 na své číslo! */
+    max-width: 1219px; 
     
     margin: 0 auto 40px auto; /* Vycentrování a mezera dole */
     border: 3px solid #1a331a; /* Tmavě zelený rámeček kolem mapy */
@@ -948,4 +1035,141 @@ body.pozadi-wow .zoom-okno {
 .wow-xp-info {
     font-size: 13px;
     color: #aaa;
+}
+
+/* =========================================================
+   --- SPECIÁLNÍ STYLY PRO VÝZVU: DO PRASINEK ---
+   ========================================================= */
+
+/* 1. ZIMNÍ / MAGICKÉ POZADÍ STRÁNKY */
+body.pozadi-prasinky {
+    background-color: #e6f2ff; /* Velmi světlý ledově modrý nádech */
+    /* Můžeš sem přidat obrázek zasněžené krajiny z Prasinek: */
+    background-image: url('images/bradavice-prasinky/chroptici-chyse-background.jpg');
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 1200px 100vh; 
+}
+
+/* NOVÉ: Omezíme obal mapy přesně na šířku tvého obrázku (837px) */
+body.pozadi-prasinky .hlavni-obal-mapy {
+    max-width: 837px; 
+    margin: 0 auto 40px auto;
+}
+
+/* 2. ZLATÉ NADPISY (jako u hlavní HP výzvy, aby to ladilo) */
+body.pozadi-prasinky h1,
+body.pozadi-prasinky h2 {
+    color: #f1c40f; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
+}
+
+/* 3. VZHLED MAPY (Zasněžený/ledový rámeček) */
+.mapa-prasinky {
+    border: 3px solid #b3d9ff; 
+    box-shadow: 0 5px 25px rgba(179, 217, 255, 0.6); 
+}
+
+/* 4. BODY ZAJÍMAVOSTÍ (Zlaté jako svíčky nebo ležák) */
+.mapa-prasinky .bod-mapy {
+    border-color: #d4af37; /* Tlumená zlatá */
+}
+
+.mapa-prasinky .bod-mapy.navstiveno {
+    background-color: #f1c40f; /* Zářivá zlatá */
+    border-color: #d35400;     
+    box-shadow: 0 0 15px #f1c40f; 
+}
+
+
+/* =========================================================
+   --- NOVÁ A BEZPEČNÁ HLAVIČKA NA DASHBOARDU (Bez kolizí) ---
+   ========================================================= */
+
+/* Obal hlavičky - vycentruje vše uvnitř */
+.pozadi-dashboard .hlavicka-dashboard {
+    position: relative; /* Tohle drží náš panel na uzdě */
+    display: flex;
+    justify-content: center; /* Nadpis bude na 100 % uprostřed stránky */
+    align-items: center;
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Uživatelský panel přilepený vpravo */
+.pozadi-dashboard .hlavicka-dashboard .uzivatelsky-panel {
+    position: absolute; /* Vytrhneme ho z toku, aby neposouval nadpis */
+    right: 30px;        /* Přilepíme k pravému okraji */
+    top: 30px;          /* Přilepíme k hornímu okraji */
+    margin: 0;
+    z-index: 10;
+    
+    background-color: rgba(255, 255, 255, 0.85); 
+    border-radius: 8px;
+    padding: 8px 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex; 
+    align-items: center;
+    gap: 15px; 
+}
+
+/* Nadpis - ujistíme se, že nemá žádné omezující šířky z minula */
+.pozadi-dashboard .hlavicka-dashboard h1 {
+    margin: 0; 
+    text-align: center;
+    max-width: 100%; 
+}
+
+/* Zkrotíme původní styly jména v panelu */
+.pozadi-dashboard .hlavicka-dashboard .uzivatelsky-panel #jmeno-zobrazeni {
+    position: static; 
+    background: none;
+    color: #333;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Zmenšené tlačítko pro odhlášení */
+.tlacitko-mensi-odhlasit {
+    background-color: #e57373;
+    color: white;
+    border: none;
+    padding: 4px 10px; 
+    font-size: 10px;   
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* --- RESPONZIVNÍ DESIGN (Pro malé monitory, tablety a mobily) --- */
+@media (max-width: 1100px) {
+    
+    .pozadi-dashboard .hlavicka-dashboard {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    /* Na malém monitoru zrušíme přilepení do rohu */
+    .pozadi-dashboard .hlavicka-dashboard .uzivatelsky-panel {
+        position: relative; 
+        right: auto;
+        top: auto;
+        margin-bottom: 20px; /* Uděláme mezeru mezi panelem a nadpisem */
+        justify-content: center;
+    }
+
+    .pozadi-dashboard .hlavicka-dashboard h1 {
+        font-size: 32px; 
+        text-align: center; 
+    }
+
+    .tlacitko-mensi-odhlasit:hover {
+    background-color: #d32f2f;
+    }
 }

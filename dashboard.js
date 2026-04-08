@@ -67,11 +67,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Vypočítáme procenta (maximálně 100%)
             const procenta = Math.min((ulozeneKm / celkoveKm) * 100, 100).toFixed(1);
+            // zaokrouhlení
+            const hezkeKm = Math.round(ulozeneKm * 100) / 100;
 
             // Vyrobíme kousek HTML s naším mini-proužkem
             const miniProgressHtml = `
                 <div class="mini-progress-obal">
-                    <div class="mini-progress-text">Máš hotovo: ${ulozeneKm} / ${celkoveKm} km (${procenta} %)</div>
+                    <div class="mini-progress-text">Máš hotovo: ${hezkeKm} / ${celkoveKm} km (${procenta} %)</div>
                     <div class="mini-progress-bar">
                         <div class="mini-progress-vypln" style="width: ${procenta}%;"></div>
                     </div>

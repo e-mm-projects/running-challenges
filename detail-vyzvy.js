@@ -62,6 +62,7 @@ if (dataVyzvy.povolitZoom === true) {
         
         // Jakmile přiblížíme, posuvníky zapneme, abychom mohli mapou hýbat
         zoomOkno.style.overflow = "auto";
+        setTimeout(zameritNaPanacka, 300);
     });
 
     document.getElementById("zoom-out-btn").addEventListener("click", function() {
@@ -85,6 +86,29 @@ if (dataVyzvy.povolitZoom === true) {
     zoomOkno.style.aspectRatio = "auto"; 
 }
 
+// --- FUNKCE PRO ZAMĚŘENÍ KAMERY NA BĚŽCE ---
+function zameritNaPanacka() {
+    const okno = document.querySelector('.zoom-okno');
+    const panacek = document.getElementById('panacek');
+
+    // Pokud nemáme okno nebo panáčka, funkce se ukončí
+    if (!okno || !panacek) return;
+
+    // Kde přesně panáček na mapě stojí (v pixelech od levého a horního okraje mapy)
+    const panacekX = panacek.offsetLeft;
+    const panacekY = panacek.offsetTop;
+
+    // Vypočítáme, kam musíme posunout posuvníky, aby byl panáček přesně uprostřed okna
+    const posunX = panacekX - (okno.clientWidth / 2);
+    const posunY = panacekY - (okno.clientHeight / 2);
+
+    // Nařídíme oknu, ať tam plynule "dojede"
+    okno.scrollTo({
+        left: posunX,
+        top: posunY,
+        behavior: 'smooth' 
+    });
+}
 
 // 4. HLAVNÍ FUNKCE PRO VÝPOČTY A KRESLENÍ (Už ji znáš)
 function aktualizujStatistiky() {
@@ -118,6 +142,8 @@ function aktualizujStatistiky() {
     // Výpočet pozice TEČEK a KARTIČEK
     let teckyHtml = "";
     let kartickyHtml = "";
+    let zabkyHtml = ""; // Hromádka pro žabky
+    let obsahujeZabky = false;
 
     for (let i = 0; i < seznamMist.length; i++) {
         let misto = seznamMist[i];
@@ -129,23 +155,53 @@ function aktualizujStatistiky() {
         let teckaTop = (bodMista.y / dataVyzvy.mapaVyska) * 100;
         
         let jeNavstiveno = nabehanoKm >= misto.km;
+        let jeZabka = misto.typ === "zabka"; // Kontrola, zda jde o žabku
+
+        if (jeZabka) obsahujeZabky = true; // Zjistíme, jestli má výzva vůbec nějaké žabky
 
         if (jeNavstiveno) {
-            teckyHtml += `<div class="bod-mapy navstiveno" style="left: ${teckaLeft}%; top: ${teckaTop}%" title="${misto.nazev}"></div>`;
-            kartickyHtml += `
-                <div class="karta-zajimavosti" onclick="otevriModal(${i})">
-                    <img src="${misto.img}" alt="${misto.nazev}">
-                    <h3>${misto.nazev} (${misto.km} km)</h3>
-                    <p>Klikni pro detail</p>
-                </div>
-            `;
+            // UŽIVATEL TAM DOŠEL
+            if (jeZabka) {
+                teckyHtml += `<div class="bod-zabka navstiveno" style="left: ${teckaLeft}%; top: ${teckaTop}%" title="${misto.nazev}">🐸</div>`;
+                zabkyHtml += `
+                    <div class="karta-zajimavosti" onclick="otevriModal(${i})">
+                        <img src="${misto.img}" alt="${misto.nazev}">
+                        <h3>${misto.nazev}</h3>
+                        <p>Klikni pro detail</p>
+                    </div>`;
+            } else {
+                teckyHtml += `<div class="bod-mapy navstiveno" style="left: ${teckaLeft}%; top: ${teckaTop}%" title="${misto.nazev}"></div>`;
+                kartickyHtml += `
+                    <div class="karta-zajimavosti" onclick="otevriModal(${i})">
+                        <img src="${misto.img}" alt="${misto.nazev}">
+                        <h3>${misto.nazev} (${misto.km} km)</h3>
+                        <p>Klikni pro detail</p>
+                    </div>`;
+            }
         } else {
-            teckyHtml += `<div class="bod-mapy" style="left: ${teckaLeft}%; top: ${teckaTop}%" title="${misto.nazev} (${misto.km} km)"></div>`;
+            // UŽIVATEL TAM JEŠTĚ NEDOŠEL
+            if (jeZabka) {
+                teckyHtml += `<div class="bod-zabka" style="left: ${teckaLeft}%; top: ${teckaTop}%" title="Neznámá čokoládová žabka (${misto.km} km)">❔</div>`;
+            } else {
+                teckyHtml += `<div class="bod-mapy" style="left: ${teckaLeft}%; top: ${teckaTop}%" title="${misto.nazev} (${misto.km} km)"></div>`;
+            }
         }
     }
 
     document.getElementById("body-na-mape").innerHTML = teckyHtml;
     document.getElementById("seznam-zajimavosti").innerHTML = kartickyHtml;
+
+    // Zobrazení/Skrytí celé sekce žabek
+    const zabkyKontejner = document.getElementById("zabky-kontejner");
+    if (zabkyKontejner) {
+        if (obsahujeZabky) {
+            zabkyKontejner.style.display = "block";
+            // Pokud ještě žádnou nemá, vypíšeme motivační text
+            document.getElementById("seznam-zabek").innerHTML = zabkyHtml !== "" ? zabkyHtml : "<p>Zatím nemáš žádné žabky. Běž dál!</p>";
+        } else {
+            zabkyKontejner.style.display = "none";
+        }
+    }
 
     // ==========================================
     // WOW LEVELING SYSTÉM (Speciální funkce)

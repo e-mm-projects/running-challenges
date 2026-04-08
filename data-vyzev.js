@@ -101,21 +101,94 @@ const databazeVyzev = {
         povolitZoom: true,                // Povolení zoomu pro trasu
         panacekHtml: `<img src="images/cesta-do-bradavic/ikona-vlak.png" alt="Bradavický expres" class="panacek-ikona-bradavice">`,              // Tematický panáček 
         seznamMist: [
-            { km: 1, nazev: "Nástupiště 9 a 3/4", text: "Prošel jsi přepážkou na King's Cross a tvoje epická cesta začíná! Bradavický expres už sice odjel, ale ty to po svých zvládneš taky. Směr sever!", img: "images/cesta-do-bradavic/nastupiste.jpg" },
+            { km: 1, nazev: "Nástupiště 9 a 3/4", text: "Prošel jsi přepážkou na King's Cross a tvoje epická cesta začíná! Bradavický expres už sice odjel, ale ty to po svých zvládneš taky. Směr sever!", img: "images/cesta-do-bradavic/nastupiste.jpg" },            
+            { km: 18, typ: "zabka", nazev: "Čokoládová žabka: Arthur Weasley", text: "Zbožňuje mudlovské vynálezy, zejména zástrčky a baterie. Jeho největším snem je zjistit, jak přesně letadlo dokáže zůstat ve vzduchu.", img: "images/cesta-do-bradavic/zabky/arthur.jpg" },
+            { km: 35, typ: "zabka", nazev: "Čokoládová žabka: Bellatrix Lestrange", text: "Její jméno pochází z latiny a znamená 'bojovnice', což naprosto sedí. Věrná služebnice Pána zla, která strávila 14 let v Azkabanu za kletby, ze kterých mrazí.", img: "images/cesta-do-bradavic/zabky/bellatrix.jpg" },
+            { km: 52, typ: "zabka", nazev: "Čokoládová žabka: Profesor Binns", text: "Jediný učitel v Bradavicích, který je duch. Údajně usnul v křesle u krbu ve sborovně a ráno odešel učit Dějiny čar a kouzel bez svého těla.", img: "images/cesta-do-bradavic/zabky/binns.jpg" },
+            { km: 69, typ: "zabka", nazev: "Čokoládová žabka: Albus Brumbál", text: "Považován za největšího kouzelníka moderní doby, který porazil Grindelwalda. Rád si pochutná na citronové zmrzlině a poslouchá komorní hudbu.", img: "images/cesta-do-bradavic/zabky/brumbal.jpg" },
+            { km: 86, typ: "zabka", nazev: "Čokoládová žabka: Cedric Diggory", text: "Férový a statečný chytač mrzimorského famfrpálového týmu. Jeho smutný konec v Turnaji tří kouzelníků byl bodem zlomu pro celý kouzelnický svět.", img: "images/cesta-do-bradavic/zabky/cedric.jpg" },
+            
             { km: 100, nazev: "Cambridge", text: "Máš za sebou první stovku a probíháš kolem slavné univerzity. Mudlové tu sice studují bez hůlek, ale architektura už trochu připomíná bradavické chodby.", img: "images/cesta-do-bradavic/cambridge.jpg" },
+            
+            { km: 120, typ: "zabka", nazev: "Čokoládová žabka: Crabbe", text: "Jeden ze dvou tupých a věrných nohsledů Draca Malfoye. Jeho záliba v jídle a touha po moci ho nakonec stála život, když nezvládl zkrotit zložár.", img: "images/cesta-do-bradavic/zabky/crabbe.jpg" },
+            { km: 140, typ: "zabka", nazev: "Čokoládová žabka: Dobby", text: "Bývalý domácí skřítek rodiny Malfoyových, který získal svobodu díky obyčejné ponožce. Pro své přátele by obětoval vše a zbožňuje pletené oblečení.", img: "images/cesta-do-bradavic/zabky/dobby.jpg" },
+            
             { km: 160, nazev: "Peterborough", text: "Vítej v Peterborough! Zastav se na chvíli u místní majestátní katedrály, naber dech a pokračuj dál na sever.", img: "images/cesta-do-bradavic/peterborough.jpg" },
+            
+            { km: 175, typ: "zabka", nazev: "Čokoládová žabka: Dolores Umbridgeová", text: "Pravděpodobně nejnenáviděnější osoba z celých Bradavic, známá svou posedlostí růžovou barvou. Je tak zlá, že ani mozkomorové na ni nemají vliv.", img: "images/cesta-do-bradavic/zabky/dolores.jpg" },
+            { km: 190, typ: "zabka", nazev: "Čokoládová žabka: Draco Malfoy", text: "Ten jehož jméno rozhodně není k smíchu! Ačkoli se snažil působit jako drsný Smrtijed, v hloubi duše na ty nejhorší činy nikdy neměl žaludek.", img: "images/cesta-do-bradavic/zabky/draco.jpg" },
+            { km: 210, typ: "zabka", nazev: "Čokoládová žabka: Argus Filch", text: "Školník v Bradavicích, který je moták, pochází z kouzelnické rodiny, ale nemá schopnosti. Jeho jediným životním cílem je nachytat studenty při lumpárnách.", img: "images/cesta-do-bradavic/zabky/filch.jpg" },
+            { km: 230, typ: "zabka", nazev: "Čokoládová žabka: Nicolas Flamel", text: "Francouzský alchymista a jediný známý tvůrce Kamene mudrců, díky kterému žil přes 600 let. Byl to velmi blízký a dobrý přítel Albuse Brumbála.", img: "images/cesta-do-bradavic/zabky/flamel.jpg" },
+            
             { km: 245, nazev: "Lincoln", text: "Lincolneshire je za tebou! Katedrála v Lincolnu posloužila při natáčení Harryho Pottera a Da Vinciho kódu. Nasaj trochu té filmové atmosféry.", img: "images/cesta-do-bradavic/lincoln.jpg" },
+            
+            { km: 265, typ: "zabka", nazev: "Čokoládová žabka: Fleur Delacour", text: "Šampionka Krásnohůlek, která má díky své babičce v krvi částečně vílí původ. Ačkoliv působí chladně, je nesmírně loajální a statečná.", img: "images/cesta-do-bradavic/zabky/fleur.jpg" },
+            { km: 285, typ: "zabka", nazev: "Čokoládová žabka: Ginny Weasleyová", text: "Nejmladší a jediná dcera v rodině Weasleyových, která v sobě skrývá obrovskou čarodějnou sílu. Nikdo nechce schytat její ukázkové Netopýří zaklínadlo.", img: "images/cesta-do-bradavic/zabky/ginny.jpg" },
+            { km: 305, typ: "zabka", nazev: "Čokoládová žabka: Godric Nebelvír", text: "Zakladatel Bradavic, který u svých studentů oceňoval statečnost a odvahu. Původní majitel Moudrého klobouku a slavného meče vykládaného rubíny.", img: "images/cesta-do-bradavic/zabky/godric.jpg" },
+            
             { km: 325, nazev: "York", text: "Jsi v Yorku! Právě probíháš uličkou Shambles, která byla hlavní inspirací pro Příčnou ulici. Dávej pozor na výlohy a nekupuj zbytečně moc Bertíkových fazolek!", img: "images/cesta-do-bradavic/york.jpg" },
+            
+            { km: 345, typ: "zabka", nazev: "Čokoládová žabka: Goyle", text: "Druhá půlka Malfoyovy gorilí ochranky, o kterém se dá říct, že má větší svaly než mozek. Po otci podědil vlohy k černé magii a stal se Smrtijedem.", img: "images/cesta-do-bradavic/zabky/goyle.jpg" },
+            { km: 365, typ: "zabka", nazev: "Čokoládová žabka: Rubeus Hagrid", text: "Poloobr a klíčník s obrovským srdcem, který má slabost pro nebezpečná 'roztomilá' zvířátka. Právě on přinesl Harrymu zprávu o tom, že je čaroděj.", img: "images/cesta-do-bradavic/zabky/hagrid.jpg" },
+            
             { km: 385, nazev: "Goathland (Prasinky)", text: "Nádherná práce! Právě jsi dorazil na nádraží Goathland, které ve filmech představovalo vlakovou zastávku v Prasinkách. Už jsi skoro v polovině cesty!", img: "images/cesta-do-bradavic/goathland.jpg" },
+            
+            { km: 400, typ: "zabka", nazev: "Čokoládová žabka: Harry Potter", text: "Chlapec, který přežil. Je jediným známým člověkem v historii kouzelnického světa, který kdy odolal smrtící kletbě Avada Kedavra.", img: "images/cesta-do-bradavic/zabky/harry.jpg" },
+            { km: 420, typ: "zabka", nazev: "Čokoládová žabka: Hedvika", text: "Harryho věrná sněžná sova, kterou dostal k jedenáctým narozeninám. Je mimořádně inteligentní a dokáže doručit dopis i bez přesného udání adresy.", img: "images/cesta-do-bradavic/zabky/hedwig.jpg" },
+            { km: 440, typ: "zabka", nazev: "Čokoládová žabka: Helga z Mrzimoru", text: "Zakladatelka školy, která proslula svým kuchařským uměním. Většina tradičních bradavických receptů, které se vaří na slavnostních hostinách, pochází od ní.", img: "images/cesta-do-bradavic/zabky/helga.jpg" },
+            { km: 460, typ: "zabka", nazev: "Čokoládová žabka: Hermiona Grangerová", text: "Nejšílenější knihomol v Bradavicích a nejchytřejší čarodějka svého věku. Její logické uvažování zachránilo Harrymu a Ronovi život víc než stokrát.", img: "images/cesta-do-bradavic/zabky/hermiona.jpg" },
+            
             { km: 475, nazev: "Durham", text: "Polovina je za tebou! Durhamská katedrála posloužila pro natáčení bradavických nádvoří a učeben (např. učebna profesorky McGonagallové).", img: "images/cesta-do-bradavic/durham.jpg" },
+            
+            { km: 485, typ: "zabka", nazev: "Čokoládová žabka: Chloupek", text: "Tříhlavý pes, který hlídal dveře ke Kameni mudrců. Kdo by to byl řekl, že tak obrovskou bestii stačí jen ukolébat k spánku zvukem obyčejné flétny!", img: "images/cesta-do-bradavic/zabky/chloupek.jpg" },
+            
             { km: 496, nazev: "Newcastle", text: "Probíháš přes Newcastle. Řeka Tyne tě povede dál na sever. Blížíš se k hranicím Skotska, přituhuje!", img: "images/cesta-do-bradavic/newcastle.jpg" },
+            
+            { km: 515, typ: "zabka", nazev: "Čokoládová žabka: Klofan", text: "Hrdý a majestátní hipogryf, který vyžaduje od každého úctu a slušnou poklonu. Věděl jsi, že místo ptačího zrní má k snídani mnohem raději čerstvé fretky?", img: "images/cesta-do-bradavic/zabky/klofan.jpg" },
+            { km: 530, typ: "zabka", nazev: "Čokoládová žabka: Křivonožka", text: "Hermionin inteligentní kocour je ve skutečnosti křížencem s magickou šelmou maguárem. Dokáže okamžitě rozeznat nespolehlivé osoby nebo maskované animágy.", img: "images/cesta-do-bradavic/zabky/krivonozka.jpg" },
+            
             { km: 545, nazev: "Hrad Alnwick", text: "Poznáváš to tu? Hrad Alnwick sloužil pro natáčení exteriérů Bradavic v prvních dvou filmech. Tady se Harry učil létat na koštěti. Ty ale zůstaň nohama pevně na zemi a běž dál!", img: "images/cesta-do-bradavic/alnwick.jpg" },
+            
+            { km: 560, typ: "zabka", nazev: "Čokoládová žabka: Viktor Krum", text: "Bulharský famfrpálový idol a jeden z nejlepších chytačů na světě. Ačkoliv působí drsně a moc toho nenamluví, je to v hloubi duše velký romantik.", img: "images/cesta-do-bradavic/zabky/krum.jpg" },
+            { km: 580, typ: "zabka", nazev: "Čokoládová žabka: Zlatoslav Lockhart", text: "Pětinásobný držitel ceny Týdeníku čarodějek za nejzářivější úsměv. Jeho jedinou skutečnou dovedností ale bylo paměťové zaklínadlo, kterým kradl cizí činy.", img: "images/cesta-do-bradavic/zabky/lockhart.jpg" },
+            
             { km: 595, nazev: "Berwick-upon-Tweed", text: "Nejsevernější město Anglie! Cítíš ten chladnější vzduch? Právě překračuješ hranice a oficiálně vstupuješ do Skotska.", img: "images/cesta-do-bradavic/berwick.jpg" },
+            
+            { km: 615, typ: "zabka", nazev: "Čokoládová žabka: Luna Lovegoodová", text: "Havraspárská studentka, která vidí tvory jako testrály nebo škrkny. I když si o ní mnozí myslí, že je blázen, je mimořádně odvážná a bystrá.", img: "images/cesta-do-bradavic/zabky/luna.jpg" },
+            { km: 635, typ: "zabka", nazev: "Čokoládová žabka: Olympe Maxime", text: "Ředitelka francouzské kouzelnické školy v Krásnohůlkách. Ačkoliv to zarputile popírá a tvrdí, že má jen velké kosti, je s největší pravděpodobností poloobryně.", img: "images/cesta-do-bradavic/zabky/maxime.jpg" },
+            { km: 655, typ: "zabka", nazev: "Čokoládová žabka: Merlin", text: "Nejslavnější kouzelník všech dob, který prý navštěvoval Bradavice a byl zařazen do Zmijozelu. Dnes se po něm jmenuje nejvyšší kouzelnické vyznamenání.", img: "images/cesta-do-bradavic/zabky/merlin.jpg" },
+            { km: 670, typ: "zabka", nazev: "Čokoládová žabka: Minerva McGonagallová", text: "Přísná profesorka přeměňování, která se dokáže proměnit v mourovatou kočku. Nikdy si s ní nezahrávej, pokud nechceš riskovat obří ztrátu kolejních bodů.", img: "images/cesta-do-bradavic/zabky/minerva.jpg" },
+            
             { km: 684, nazev: "Edinburgh", text: "Vítej v hlavním městě Skotska a místě, kde J.K. Rowlingová napsala většinu knih o Harrym Potterovi! Tohle město dýchá magií na každém rohu.", img: "images/cesta-do-bradavic/edinburgh.jpg" },
+            
+            { km: 700, typ: "zabka", nazev: "Čokoládová žabka: Molly Weasleyová", text: "Milující matka, jejíž vánoční pletené svetry jsou legendární. Pod jejím láskyplným úsměvem se ale skrývá nesmírně mocná a bojovná čarodějka.", img: "images/cesta-do-bradavic/zabky/molly.jpg" },
+            { km: 720, typ: "zabka", nazev: "Čokoládová žabka: Nagini", text: "Voldemortův milovaný had, se kterým dokázal mluvit pomocí hadího jazyka. Její tělo sloužilo jako jeden z posledních temných viteálů.", img: "images/cesta-do-bradavic/zabky/nagini.jpg" },
+            { km: 740, typ: "zabka", nazev: "Čokoládová žabka: Neville Longbottom", text: "Na první pohled zapomnětlivý kluk, který se bál i vlastního stínu. Postupem času ale našel neuvěřitelnou odvahu a vytáhl Godricův meč z Moudrého klobouku.", img: "images/cesta-do-bradavic/zabky/neville.jpg" },
+            { km: 760, typ: "zabka", nazev: "Čokoládová žabka: Percy Weasley", text: "Nejambicióznější z rodiny Weasleyových, který nade vše miloval tloušťku kotlíkových den. Získal post Primuse a snil o tom, že se stane ministrem.", img: "images/cesta-do-bradavic/zabky/percy.jpg" },
+            
             { km: 780, nazev: "Stirling", text: "Míjíš historický Stirling. Odsud už tě čeká ta pravá, divoká skotská vysočina (Highlands). Připrav se na kopečky!", img: "images/cesta-do-bradavic/stirling.jpg" },
+            
+            { km: 800, typ: "zabka", nazev: "Čokoládová žabka: Prašivka", text: "Dvanáct let žila jako obyčejná a nudná krysa u Weasleyových. Nikdo netušil, že se v ní ve skutečnosti skrývá zrádný zvěromág Peter Pettigrew.", img: "images/cesta-do-bradavic/zabky/prasivka.jpg" },
+            { km: 820, typ: "zabka", nazev: "Čokoládová žabka: Profesor Quirrell", text: "Koktající profesor s fialovým turbanem na hlavě, který se bál i vlastních studentů. Jeho cesty za poznáním do Albánie se mu staly doslova osudnými.", img: "images/cesta-do-bradavic/zabky/quirrell.jpg" },
+            { km: 840, typ: "zabka", nazev: "Čokoládová žabka: Regulus Black", text: "Mladší bratr Siriuse, který se původně dal ke Smrtijedům. Nakonec prozřel a obětoval svůj život, aby vyměnil jeden z Voldemortových viteálů.", img: "images/cesta-do-bradavic/zabky/regulus.jpg" },
+            { km: 855, typ: "zabka", nazev: "Čokoládová žabka: Ron Weasley", text: "Harryho nejlepší kamarád, který trpí arachnofobií. Ačkoliv někdy bojuje se stíny svých sourozenců, ve statečnosti a čarodějných šachách exceluje.", img: "images/cesta-do-bradavic/zabky/ron.jpg" },
+            
             { km: 870, nazev: "Crianlarich", text: "Křižovatka skotské vysočiny. Jsi obklopený horami a jezery. Magie v ovzduší houstne, cíl se blíží!", img: "images/cesta-do-bradavic/crianlarich.jpg" },
+            
+            { km: 885, typ: "zabka", nazev: "Čokoládová žabka: Rowena z Havraspáru", text: "Zakladatelka bradavické koleje, která si cenila intelektu nade vše. Její legendární ztracený diadém měl prý nositeli přinést ohromnou moudrost.", img: "images/cesta-do-bradavic/zabky/rowena.jpg" },
+            { km: 900, typ: "zabka", nazev: "Čokoládová žabka: Salazar Zmijozel", text: "Zakladatel školy, který tvrdil, že magie by měla patřit pouze čistokrevným. Po neshodách Bradavice opustil, ale zanechal po sobě Komnatu nejvyššího tajemství.", img: "images/cesta-do-bradavic/zabky/salazar.jpg" },
+            
             { km: 910, nazev: "Glencoe", text: "Zataj dech. Běžíš epickým údolím Glencoe. Tady stála Hagridova bouda a točily se tu úchvatné záběry z Vězně z Azkabanu. Posledních pár kilometrů!", img: "images/cesta-do-bradavic/glencoe.jpg" },
+            
+            { km: 925, typ: "zabka", nazev: "Čokoládová žabka: Sirius Black", text: "Harryho kmotr, který na sebe jako neregistrovaný zvěromág dokázal vzít podobu velkého psa. Strávil dvanáct let v Azkabanu za zločin, který nespáchal.", img: "images/cesta-do-bradavic/zabky/sirius.jpg" },
+            { km: 940, typ: "zabka", nazev: "Čokoládová žabka: Severus Snape", text: "Mistr lektvarů, jehož složitá povaha skrývala největší oběť v kouzelnickém světě. Jeho Patronem byla stříbrná laň, úplně stejná, jakou měla Lily Potterová.", img: "images/cesta-do-bradavic/zabky/snape.jpg" },
+            
             { km: 950, nazev: "Glenfinnan Viaduct", text: "Slyšíš to houkání? Právě běžíš pod slavným viaduktem, přes který jezdí Bradavický expres! Most má 21 oblouků a za ním už tě čeká jen cíl.", img: "images/cesta-do-bradavic/glenfinnan.jpg" },
+            
+            { km: 965, typ: "zabka", nazev: "Čokoládová žabka: Sybilla Trelawneyová", text: "Profesorka jasnovidectví, jejíž předpovědi znějí často jako nesmysly. Přesto nevědomky pronesla věštby, které navždy změnily dějiny kouzelnického světa.", img: "images/cesta-do-bradavic/zabky/sybilla.jpg" },
+            { km: 980, typ: "zabka", nazev: "Čokoládová žabka: Tesák", text: "Hagridův obří pes, který je ale ve skutečnosti neuvěřitelný zbabělec. Při sebemenším náznaku nebezpečí vezme okamžitě do zaječích.", img: "images/cesta-do-bradavic/zabky/tesak.jpg" },
+            { km: 995, typ: "zabka", nazev: "Čokoládová žabka: Voldemort", text: "Temný pán, jehož jméno se kdysi nesmělo ani vyslovit. Rozdělil svou duši do viteálů v zoufalé snaze dosáhnout nesmrtelnosti, což se mu nakonec stalo osudným.", img: "images/cesta-do-bradavic/zabky/voldemort.jpg" },
+            
             { km: 1010, nazev: "Loch Shiel (Bradavice)", text: "DOKÁZAL JSI TO! Stojíš na břehu jezera Loch Shiel, které představovalo Černé jezero. V dálce už vidíš tyčit se bradavický hrad. 1010 kilometrů plných magie je za tebou!", img: "images/cesta-do-bradavic/loch-shiel.jpg" }
         ]
     },
@@ -212,6 +285,106 @@ const databazeVyzev = {
                 img: "images/dark-portal/darkportal.jpg" 
             }
         ]
-    }
+    },
+
+    "prasinky": {
+        nazev: "Z Bradavic do Prasinek",
+        celkoveKm: 16,
+        tridaPozadi: "pozadi-prasinky",      
+        tridaMapy: "mapa-prasinky",          
+        mapaImg: "images/bradavice-prasinky/hogwarts2.jpg",
+        svgViewBox: "0 0 837 1252",        
+        svgPath: "M 566 295 L 625 343 L 632 377 L 518 453 L 505 490 L 544 509 L 613 513 L 592 556 L 529 590 L 453 628 L 442 642 L 392 660 L 397 682 L 481 707 L 489 777 L 437 804 L 380 840 L 321 899 L 257 851 L 264 811 L 237 782 L 205 783 L 169 809 L 67 894 L 72 927 L 158 894 L 200 869 L 284 923 L 312 986 L 317 1011 L 405 963 L 462 997 L 499 1025 L 579 1056 L 619 1010 L 533 711 L 649 686 L 677 638 L 687 585 L 597 550 L 509 492 L 517 455 L 634 378 L 613 333 L 570 300",
+        mapaSirka: 837, 
+        mapaVyska: 1252,
+        povolitZoom: false,               
+        panacekHtml: "🧙‍♂️",
+        seznamMist: [
+            { 
+                km: 0.3, 
+                nazev: "Hagridova bouda", 
+                text: "Přebrodil ses zasněženými školními pozemky k Hagridovu srubu. Zastávka na skleničku čaje a ty nejtvrdší koláčky, co si kdy vyzkoušel. Nezapomeň taky pohladit Tesáka!", 
+                img: "images/bradavice-prasinky/hagrid.jpg" 
+            },
+            { 
+                km: 1.2, 
+                nazev: "Skleníky", 
+                text: "Běž prosím potichu dál, protože tady zrovna dřímají Mandragory a jestli je vzbudíš - no řekněme, že probudit obraz Siriusovi drahé maminky je oproti tomu příjemná kratochvíle.", 
+                img: "images/bradavice-prasinky/skleniky.jpg" 
+            },
+            { 
+                km: 2, 
+                nazev: "Na Famfrpál!", 
+                text: "Zastávka na Famfrpál! Hraje Nebelvír proti Zmijozelu! Zrovna je ale sněhová bouře a tak to vypadá, že zápas bude trvat ještě pěkně dlouho. Ty tady zmrznout nechceš, takže sis vsadil u Freda a George galeon na Nebelvír.", 
+                img: "images/bradavice-prasinky/famfrpal.jpg" 
+            },
+            { 
+                km: 4, 
+                nazev: "Vrba Mlátička", 
+                text: "Vrbu nech Vrbou a radši se hezky rychle kliď z cesty. Má to být přece procházka a ne boj o život! Možná se tu zastavíš na cestě zpátky...", 
+                img: "images/bradavice-prasinky/vrba.jpg" 
+            },
+            { 
+                km: 5, 
+                nazev: "Prasinky", 
+                text: "A seš v Prasinkách! Věděl jsi, že je to jediná čistě kouzelnická vesnice v celé Británii? Ne? Tak teď už to víš!. Po cestě jsi pěkně zmrznul, pojdme se vydat na návštěvu ke Třem Košťatům!", 
+                img: "images/bradavice-prasinky/prasinky.jpg" 
+            },
+            { 
+                km: 6, 
+                nazev: "U Tří Košťat", 
+                text: "Hned při vstupu tě vítá madam Rosmerta a už čepuje máslový ležák. Je to útulné místo s dřevěným nábytkem a velkým hořícím krbem. Odpočiň si po cestě z Bradavic, dej si jeden dva ležáky a nasaj atmosféru!", 
+                img: "images/bradavice-prasinky/tri-kostata.jpg" 
+            },
+            { 
+                km: 6.3, 
+                nazev: "U Prasečí hlavy", 
+                text: "Podivné vzezření podivné hospody s podivnými lidmi uvnitř. Dnes ale nemáš za lubem žádné lumpárny a tak tě sem nic netáhne. Hostinský vypadá nějak povědomě.", 
+                img: "images/bradavice-prasinky/praseci-hlava.jpg" 
+            },
+            { 
+                km: 7, 
+                nazev: "Medový ráj", 
+                text: "Sen každého milovníka sladkostí, vítej v Medovém Ráji! Tady je ten pravý humbuk, vypadá to, jakoby se sem nasáčkovala půlka hradu. Koupil sis pár krvavých lízátek a jedny Bertíkovy fazolky tisíckrát jinak. Jaká bude tvoje příchuť?", 
+                img: "images/bradavice-prasinky/medovy-raj.jpg" 
+            },
+            { 
+                km: 7.5, 
+                nazev: "Soví pošta", 
+                text: "Duležitý komunikační uzel. Vyber si sovu podle toho, jak rychle chceš poslat svůj dopis, zaplať a nech ji doručit svůj dopis. Dnes se tu ale jen zastavíš a prohlédneš si, jak si spokojeně houkají a čekají na dopis, který budou moci odnést!", 
+                img: "images/bradavice-prasinky/sovi-posta.jpg" 
+            },
+            { 
+                km: 10.5, 
+                nazev: "Chroptící Chýše", 
+                text: "Nejstrašidelnější budova v prasinkách a možná i v celé Británii! Ve skutečnosti za všechno mohl Remus Lupin, který zde našel útočiště pro své proměny ve vlkodlaka. Je zde taky tajný vchod k Vrbě mlátičce a ten využijeme! Už jsi zmrzlý dost a aspoň kousek se vyhneš vánici tam venku.", 
+                img: "images/bradavice-prasinky/chroptici-chyse-background.jpg" 
+            },
+            { 
+                km: 12.4, 
+                nazev: "Vrba Mlátička", 
+                text: "Zatáhni za tajný suk a jsi venku! A bez škrábnutí. Dostat se směrem z tajného vchodu tohoto mírumilovného stromu je o poznání snažší, než dovnitř.", 
+                img: "images/bradavice-prasinky/vrba2.jpg" 
+            },
+            { 
+                km: 13.4, 
+                nazev: "Zapovězený les", 
+                text: "Neboj se, do lesa dnes nejdeme! Počasí se trochu umoudřilo a sníh se jen pozvolna snáší k zemi. Rozhodl ses tedy pozdravit kentaura Firenzeho a jdeš se podívat, jak dopadl Famfrpál.", 
+                img: "images/bradavice-prasinky/les.jpg" 
+            },
+            { 
+                km: 13.9, 
+                nazev: "Famfrpálové hřiště", 
+                text: "Nebelvír naštěstí zvítězil a tak si zdvojnásobil svůj počet galeonů! Při vánici zmijozelští nepříjemně faulovali bez povšimnutí, ale Harrymu se naštěstí podařilo chytit zlatonku díky Vrónského fintě!", 
+                img: "images/bradavice-prasinky/famfrpal2.jpg" 
+            },
+            { 
+                km: 16, 
+                nazev: "Bradavice", 
+                text: "Oklepal si sníh z bot a došel do vstupní síně v Bradavicích, už se těšíš na vyhřátou společenskou místnost. Procházka to byla super, ale doma je doma! Naviděnou příště.", 
+                img: "images/bradavice-prasinky/bradavice.jpg" 
+            },
+        ]
+    },
 }
 

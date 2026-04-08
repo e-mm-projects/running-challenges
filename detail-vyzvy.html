@@ -58,12 +58,21 @@
         <div class="zoom-ovladani" id="zoom-ovladani" style="display: none;">
             <button id="zoom-in-btn">➕ Přiblížit</button>
             <button id="zoom-out-btn">➖ Oddálit</button>
+            <button onclick="zameritNaPanacka()">🎯 Zaměřit</button>
+            
         </div>
     </div>
 
     <div class="navstivena-mista">
         <h2>Tvůj cestovatelský deník (Dosažená místa):</h2>
         <div id="seznam-zajimavosti" class="zajimavosti-mrizka"></div>
+    </div>
+
+    <div id="zabky-kontejner" class="navstivena-mista" style="display: none; margin-top: 30px;">
+            <details class="rozbalovaci-sekce">
+                <summary><h2>Sbírka čokoládových žabek</h2></summary>
+                <div id="seznam-zabek" class="zajimavosti-mrizka"></div>
+            </details>
     </div>
 
     <p id="jmeno-zobrazeni"></p>
