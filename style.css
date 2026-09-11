@@ -1160,7 +1160,7 @@ body.pozadi-prasinky h2 {
         position: relative; 
         right: auto;
         top: auto;
-        margin-bottom: 20px; /* Uděláme mezeru mezi panelem a nadpisem */
+        margin-bottom: 20px; /* mezera mezi panelem a nadpisem */
         justify-content: center;
     }
 
@@ -1172,4 +1172,74 @@ body.pozadi-prasinky h2 {
     .tlacitko-mensi-odhlasit:hover {
     background-color: #d32f2f;
     }
+}
+
+/* =========================================================
+   --- TABULKA HISTORIE ZÁZNAMŮ ---
+   ========================================================= */
+.historie-tabulka {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 15px;
+}
+
+.historie-tabulka th, 
+.historie-tabulka td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.historie-tabulka th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+/* Poslední řádek nebude mít čáru dole */
+.historie-tabulka tr:last-child td {
+    border-bottom: none;
+}
+
+/* Zvýraznění řádku při najetí myší na PC */
+.historie-tabulka tr:hover {
+    background-color: #f9f9f9;
+}
+
+.btn-smazat-zaznam {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-upravit-zaznam {
+    background-color: #2196F3; /* Pěkná modrá barva */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+    margin-right: 5px; /* Mezera mezi Upravit a Smazat */
+}
+
+.btn-upravit-zaznam:hover {
+    background-color: #0b7dda;
+}
+
+.btn-smazat-zaznam:hover {
+    background-color: #d32f2f;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Běžecké výzvy - Přihlášení</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="pozadi-index">
@@ -16,10 +17,17 @@
         <form class="prihlasovaci-okno" onsubmit="prihlasit(event)">
             <input type="text" id="jmeno" name="jmeno" placeholder="Zadej své jméno..." autocomplete="nickname">
             <br>
+            <input type="password" id="heslo-vypravy" placeholder="Zadej heslo...">
+            <div id="chyba-zprava" style="display: none; color: #dbbf06; font-size: 14px; margin-bottom: 15px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"></div>
+            <br>
             <button type="submit">Začít dobrodružství</button>
         </form>
 
     </div>
+
+    // FIREBASE
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
 
     <script src="script.js"></script>
 

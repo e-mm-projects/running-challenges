@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail výzvy</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="telo-stranky"> <button id="zpet-btn" class="tlacitko-zpet">Zpět na nástěnku</button>
@@ -25,7 +26,6 @@
         <input type="number" id="nove-km" min="0.1" step="0.1" placeholder="Např. 5.5">
         <div class="tlacitka-skupina">
             <button id="pridat-km-btn">Přidat kilometry</button>
-            <button id="odebrat-km-btn" class="cervene-tlacitko">Smazat kilometry</button>
         </div>
     </div>
 
@@ -64,8 +64,10 @@
     </div>
 
     <div class="navstivena-mista">
-        <h2>Tvůj cestovatelský deník (Dosažená místa):</h2>
-        <div id="seznam-zajimavosti" class="zajimavosti-mrizka"></div>
+        <details class="rozbalovaci-sekce">
+            <summary><h2>Tvůj cestovatelský deník</h2></summary>
+            <div id="seznam-zajimavosti" class="zajimavosti-mrizka"></div>
+        </details>
     </div>
 
     <div id="zabky-kontejner" class="navstivena-mista" style="display: none; margin-top: 30px;">
@@ -73,6 +75,30 @@
                 <summary><h2>Sbírka čokoládových žabek</h2></summary>
                 <div id="seznam-zabek" class="zajimavosti-mrizka"></div>
             </details>
+    </div>
+
+    <!-- Historie běhů -->
+    <div class="navstivena-mista" style="margin-top: 30px; margin-bottom: 50px;">
+        <details class="rozbalovaci-sekce">
+            <summary><h2>Historie záznamů</h2></summary>
+            
+            <!-- Tabulka s historií -->
+            <div style="overflow-x: auto;">
+                <table class="historie-tabulka">
+                    <thead>
+                        <tr>
+                            <th>Datum a čas</th>
+                            <th>Kilometry</th>
+                            <th>Akce</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historie-telo">
+                        <!-- Zde bude JavaScript generovat řádky -->
+                    </tbody>
+                </table>
+            </div>
+            
+        </details>
     </div>
 
     <p id="jmeno-zobrazeni"></p>
@@ -85,6 +111,9 @@
             <p id="modal-text">Tady bude text o místě...</p>
         </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
 
     <script src="data-vyzev.js"></script>
     <script src="detail-vyzvy.js"></script>

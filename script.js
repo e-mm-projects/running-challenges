@@ -1,29 +1,51 @@
-// Do závorky jsme přidali slovo 'event', abychom mohli formuláři říct, jak se má chovat
+// 1. Tvoje konfigurace z Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBNdcnQFnQblLTE6VCS-7EfJwrWEIGJrBA",
+    authDomain: "running-challenges-6cbea.firebaseapp.com",
+    projectId: "running-challenges-6cbea",
+    storageBucket: "running-challenges-6cbea.firebasestorage.app",
+    messagingSenderId: "1084399919766",
+    appId: "1:1084399919766:web:a0e828e0775ad2cff358b7"
+};
+
+// 2. Nastartujeme Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// 3. Hlavní přihlašovací funkce
 function prihlasit(event) {
-    
-    // 1. Zabráníme prohlížeči, aby po odklepnutí Enterem nesmyslně obnovil stránku
     if (event) {
         event.preventDefault();
     }
     
-    // 2. Najdeme políčko podle jeho ID
     const inputJmeno = document.getElementById("jmeno");
-
-    // 3. Zjistíme, co uživatel napsal (a ořízneme mezery)
+    const inputHeslo = document.getElementById("heslo-vypravy");
+    const chybaZprava = document.getElementById("chyba-zprava"); // Náš nový prvek pro chyby
+    
     const zadaneJmeno = inputJmeno.value.trim();
+    const zadaneHeslo = inputHeslo.value.trim();
 
-    // 4. Zkontrolujeme, jestli nezůstalo prázdné
-    if (zadaneJmeno !== "") {
-        
-        // 5. Uložíme jméno (v tuhle chvíli si ho uloží i prohlížeč do svého našeptávače!)
-        localStorage.setItem("uzivatel", zadaneJmeno);
-        
-        // 6. Přesměrujeme tě na nástěnku
-        setTimeout(function(){
-            window.location.href = "dashboard.html";
-        }, 100);
-        
-    } else {
-        alert("Prosím, zadej nejprve své jméno.");
+    const TAJNE_HESLO = "run"; 
+
+    // Při každém novém pokusu hlášku nejprve schováme
+    chybaZprava.style.display = "none";
+
+    if (zadaneJmeno === "") {
+        chybaZprava.innerText = "Prosím, zadej nejprve své jméno.";
+        chybaZprava.style.display = "block"; // Zobrazí chybu
+        return; 
     }
+
+    if (zadaneHeslo !== TAJNE_HESLO) {
+        chybaZprava.innerText = "Špatné heslo výpravy! Zkus to znovu.";
+        chybaZprava.style.display = "block"; // Zobrazí chybu
+        return; 
+    }
+        
+    // Vše v pořádku
+    localStorage.setItem("uzivatel", zadaneJmeno);
+    
+    setTimeout(function(){
+        window.location.href = "dashboard.html";
+    }, 100);
 }
